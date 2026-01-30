@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNest - Enterprise Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Specific overrides for Home 2 Theme */
+        .home2-hero {
+            background-image: url('Assets/service bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .home2-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            z-index: 1;
+        }
+
+        .home2-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .home2-content h1 {
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        .stats-bar {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .stats-bar {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="wire left"></div>
+            <div class="wire right"></div>
+            <div class="spark"></div>
+            <div class="connection-point"></div>
+        </div>
+        <div class="loading-text">[ SYSTEM_INITIALISING... ]</div>
+    </div>
+
+    <header>
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <i class='bx bx-hive'></i> <span class="glitch-text" data-text="TECHNEST">TECHNEST</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#" class="active">Home <i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content">
+                            <a href="index.html">Home 1</a>
+                            <a href="index2.html">Home 2</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Dashboard <i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content">
+                            <a href="user-dashboard.html">User Dashboard</a>
+                            <a href="admin-dashboard.html">Admin Dashboard</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn btn-outline" style="padding: 8px 16px;">Login</a></li>
+                    <li><a href="register.html" class="btn btn-primary" style="padding: 8px 16px; color: white;">Sign
+                            Up</a></li>
+                </ul>
+            </nav>
+            <div class="controls">
+                <button id="rtl-toggle" class="btn btn-outline"
+                    style="padding: 5px 10px; font-size: 0.8rem;">🌐</button>
+                <button id="theme-toggle" class="icon-btn"><i class='bx bx-moon'></i></button>
+                <div id="menu-toggle" class="menu-toggle"><i class='bx bx-menu'></i></div>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 0;">
+        <!-- SECTION 1: LIQUID MATRIX HERO -->
+        <section class="tech-section relative overflow-hidden" style="padding: 120px 0; background: var(--bg-body);">
+            <div class="sb-wire-h"
+                style="top: 40%; width: 100%; opacity: 0.1; background: linear-gradient(90deg, transparent, var(--secondary), transparent);">
+            </div>
+            <div class="container relative z-10">
+                <div class="sb-panel max-w-4xl">
+                    <span class="text-xs text-secondary mb-2 block font-mono">[ PROTOCOL: MATRIX_OVERRIDE ]</span>
+                    <h1 class="text-6xl font-black text-main mb-6">LIQUID <span class="text-secondary">WIRING</span>
+                        CORE</h1>
+                    <p class="text-xl text-gray-400 mb-10 max-w-2xl">Adaptive IT infrastructure that flows with
+                        your business logic. Pure performance, zero friction.</p>
+
+                    <div class="flex gap-6">
+                        <a href="services.html" class="sb-panel"
+                            style="background: var(--secondary); color: #000; padding: 15px 30px; border: none; font-weight: 800; display: inline-flex; align-items: center; gap: 10px;">
+                            <i class='bx bx-git-branch'></i> FORK MODULE
+                        </a>
+                        <a href="contact.html" class="sb-panel"
+                            style="background: transparent; color: #fff; padding: 15px 30px; font-weight: 800; display: inline-flex; align-items: center; gap: 10px;">
+                            <i class='bx bx-pulse'></i> PING ARCHITECT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: TELEMETRY BAR -->
+        <div class="container">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 -mt-10 relative z-20">
+                <div class="sb-panel text-center" style="padding: 20px !important;">
+                    <div class="text-3xl font-black text-primary mb-1">500+</div>
+                    <div class="text-xs text-gray-600 font-mono">CLIENT_NODES</div>
+                </div>
+                <div class="sb-panel text-center" style="padding: 20px !important;">
+                    <div class="text-3xl font-black text-secondary mb-1">99.9%</div>
+                    <div class="text-xs text-gray-600 font-mono">UPTIME_INDEX</div>
+                </div>
+                <div class="sb-panel text-center" style="padding: 20px !important;">
+                    <div class="text-3xl font-black text-accent mb-1">
+                        < 15m</div>
+                            <div class="text-xs text-gray-600 font-mono">REACTION_TIME</div>
+                    </div>
+                    <div class="sb-panel text-center" style="padding: 20px !important;">
+                        <div class="text-3xl font-black text-white mb-1">24/7</div>
+                        <div class="text-xs text-gray-600 font-mono">VIGILANCE</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: SYSTEM INSIGHTS (News Terminal) -->
+            <section class="tech-section reveal-on-scroll">
+                <div class="container">
+                    <div class="section-title mb-16">
+                        <h2 class="text-white text-3xl font-bold">[ SYSTEM_LOGS ]</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="sb-panel group cursor-pointer hover:border-secondary transition-all">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[0.6rem] font-mono text-gray-700 bg-black px-2 py-1">ENTRY:
+                                    2901-X</span>
+                                <div class="w-1.5 h-1.5 rounded-full bg-secondary group-hover:animate-ping"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">CLOUD EVOLUTION</h3>
+                            <p class="text-sm text-gray-500 mb-6">How neural orchestration is redefining the boundaries
+                                of scalable cloud architectures.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-secondary font-mono">READ_DATA()</span>
+                                <i class='bx bx-chevron-right text-secondary'></i>
+                            </div>
+                        </div>
+                        <div class="sb-panel group cursor-pointer hover:border-primary transition-all">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[0.6rem] font-mono text-gray-700 bg-black px-2 py-1">ENTRY:
+                                    2801-Z</span>
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary group-hover:animate-ping"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">CYBER DEFENSE</h3>
+                            <p class="text-sm text-gray-500 mb-6">Autonomous packet analysis and Zero Trust protocols
+                                for the next decade.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-primary font-mono">READ_DATA()</span>
+                                <i class='bx bx-chevron-right text-primary'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: DEPLOYMENT SUCCESS (Case Studies) -->
+            <section class="tech-section bg-card" style="background: var(--bg-card);">
+                <div class="container">
+                    <div class="section-title mb-16">
+                        <h2 class="text-white text-3xl font-bold">SUCCESS CIRCUITS</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="sb-panel border-l-4 border-l-primary !border-t-0 !border-r-0 !border-b-0">
+                            <h3 class="text-white font-bold mb-2">FINTECH_NODE</h3>
+                            <p class="text-xs text-gray-500">50TB Migration | 0ms Downtime | Hybrid Integration</p>
+                        </div>
+                        <div class="sb-panel border-l-4 border-l-secondary !border-t-0 !border-r-0 !border-b-0">
+                            <h3 class="text-white font-bold mb-2">HEALTH_GRID</h3>
+                            <p class="text-xs text-gray-500">15 Locations | HIPAA Compliant | Mesh Network</p>
+                        </div>
+                        <div class="sb-panel border-l-4 border-l-accent !border-t-0 !border-r-0 !border-b-0">
+                            <h3 class="text-white font-bold mb-2">LOGISTICS_MESH</h3>
+                            <p class="text-xs text-gray-500">IoT Overdrive | 20% Cost Reduction | Real-time Telemetry
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: OPERATIONAL TEAM -->
+            <section class="tech-section">
+                <div class="container">
+                    <div class="section-title mb-16">
+                        <h2 class="text-white text-3xl font-bold">SYSTEM ARCHITECTS</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="sb-panel text-center">
+                            <div
+                                class="w-16 h-16 rounded-full border-2 border-primary mx-auto mb-4 overflow-hidden grayscale">
+                                <img src="Assets/images (1).jpg" alt="Team">
+                            </div>
+                            <h4 class="text-white font-bold">ALEX MORGAN</h4>
+                            <p class="text-[0.6rem] text-primary font-mono">CHIEF_OFFICER (CTO)</p>
+                        </div>
+                        <div class="sb-panel text-center">
+                            <div
+                                class="w-16 h-16 rounded-full border-2 border-secondary mx-auto mb-4 overflow-hidden grayscale">
+                                <img src="Assets/images (2).jpg" alt="Team">
+                            </div>
+                            <h4 class="text-white font-bold">SARAH LEE</h4>
+                            <p class="text-[0.6rem] text-secondary font-mono">SECURITY_LEAD</p>
+                        </div>
+                        <div class="sb-panel text-center">
+                            <div
+                                class="w-16 h-16 rounded-full border-2 border-accent mx-auto mb-4 overflow-hidden grayscale">
+                                <img src="Assets/images (3).jpg" alt="Team">
+                            </div>
+                            <h4 class="text-white font-bold">DAVID KIM</h4>
+                            <p class="text-[0.6rem] text-accent font-mono">ENGINEERING_LEAD</p>
+                        </div>
+                        <div class="sb-panel text-center">
+                            <div
+                                class="w-16 h-16 rounded-full border-2 border-primary mx-auto mb-4 overflow-hidden grayscale">
+                                <img src="Assets/images (4).jpg" alt="Team">
+                            </div>
+                            <h4 class="text-white font-bold">EMILY CHEN</h4>
+                            <p class="text-[0.6rem] text-primary font-mono">CLIENT_OPS</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: CLIENT PROTOCOLS (Feedbacks) -->
+            <section class="tech-section reveal-on-scroll" style="background: var(--bg-card);">
+                <div class="container">
+                    <div class="section-title mb-16">
+                        <h2 class="text-white text-3xl font-bold">CLIENT_PROTOCOLS</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="sb-panel border-r-4 border-r-secondary !border-t-0 !border-l-0 !border-b-0">
+                            <p class="text-gray-400 italic mb-4">"The neural network monitoring has virtually eliminated
+                                our downtime. It's like having a precog team for our servers."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-secondary/10 border border-secondary"></div>
+                                <span class="text-xs text-secondary font-mono">SYS_ADMIN_404</span>
+                            </div>
+                        </div>
+                        <div class="sb-panel border-r-4 border-r-accent !border-t-0 !border-l-0 !border-b-0">
+                            <p class="text-gray-400 italic mb-4">"Absolute compliance achieved across 4 continents. The
+                                global node mesh is a masterpiece of orchestration."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-accent/10 border border-accent"></div>
+                                <span class="text-xs text-accent font-mono">DATA_ARCHITECT_01</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: EVOLUTION TRACE (Timeline) -->
+            <section class="tech-section reveal-on-scroll">
+                <div class="container">
+                    <div class="section-title mb-16">
+                        <h2 class="text-white text-3xl font-bold">EVOLUTION_TRACE</h2>
+                    </div>
+                    <div class="timeline-v2 max-w-3xl mx-auto">
+                        <div class="timeline-v2-item active">
+                            <h3 class="text-xl font-bold text-primary mb-2">v1.0: THE_CORE</h3>
+                            <div class="sb-panel p-6">
+                                <p class="text-gray-400">Initial matrix inception. Liquid wiring protocols established.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-v2-item active">
+                            <h3 class="text-xl font-bold text-secondary mb-2">v2.0: NEURAL_ORBIT</h3>
+                            <div class="sb-panel p-6">
+                                <p class="text-gray-400">Expansion to global node clusters with AI-driven load
+                                    balancing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: CORE QUESTIONS (FAQs) -->
+            <section class="tech-section reveal-on-scroll" style="background: var(--bg-card);">
+                <div class="container">
+                    <div class="section-title mb-16">
+                        <h2 class="text-white text-3xl font-bold">CORE_QUESTIONS</h2>
+                    </div>
+                    <div class="max-w-2xl mx-auto space-y-4">
+                        <div class="faq-v2-item">
+                            <div class="faq-v2-header">
+                                [ Q: MATRIX_COMPATIBILITY? ]
+                                <i class='bx bx-plus'></i>
+                            </div>
+                            <div class="faq-v2-content">
+                                Our core is compatible with all legacy x86/ARM architectures and modern cloud-native
+                                orchestration layers.
+                            </div>
+                        </div>
+                        <div class="faq-v2-item">
+                            <div class="faq-v2-header">
+                                [ Q: ENCRYPTION_STANDARDS? ]
+                                <i class='bx bx-plus'></i>
+                            </div>
+                            <div class="faq-v2-content">
+                                Pure AES-512-GCM encryption with quantum-safe key rotation protocols active by default.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: UNIFIED CTA -->
+            <section class="tech-section py-20 bg-secondary"
+                style="background: var(--secondary) !important; color: #000;">
+                <div class="container">
+                    <h2 class="text-4xl font-black text-black mb-6">READY TO OVERRIDE?</h2>
+                    <p class="text-black font-bold mb-10 opacity-70">Switch to the liquid matrix core for absolute
+                        infrastructure dominance.</p>
+                    <div class="flex gap-4">
+                        <a href="contact.html" class="sb-panel bg-body text-secondary border-none px-10 font-black"
+                            style="background: var(--bg-body);">INITIAL_QUOTATION</a>
+                        <a href="services.html"
+                            class="sb-panel bg-transparent text-black border-black px-10 font-black">EXPLORE_SPECS</a>
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>TechNest</h3>
+                    <p style="color: var(--text-muted);">Empowering businesses with top-tier IT support and
+                        infrastructure management. We provide reliable, secure, and scalable solutions for companies of
+                        all sizes.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="service-details.html">Help Desk</a></li>
+                        <li><a href="service-details.html">Cyber Security</a></li>
+                        <li><a href="service-details.html">Cloud Migration</a></li>
+                        <li><a href="service-details.html">Network Setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class='bx bx-map'></i> 123 Innovation Drive, Tech City, CA</li>
+                        <li><i class='bx bx-phone'></i> +1 (555) 123-4567</li>
+                        <li><i class='bx bx-envelope'></i> support@itsquad.com</li>
+                    </ul>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i
+                                class='bx bxl-facebook'></i></a>
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i
+                                class='bx bxl-instagram'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 TechNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+</body>
+
+</html>

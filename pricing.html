@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - TechNest</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="wire left"></div>
+            <div class="wire right"></div>
+            <div class="spark"></div>
+            <div class="connection-point"></div>
+        </div>
+        <div class="loading-text">[ SYSTEM_INITIALISING... ]</div>
+    </div>
+
+    <header>
+        <div class="container flex justify-between items-center"
+            style="background: var(--bg-card); padding: 10px 20px; border-radius: 8px; border: 2px solid var(--border); box-shadow: var(--shadow);">
+            <a href="index.html" class="logo">
+                <i class='bx bx-code-block'></i> <span class="glitch-text" data-text="TECHNEST">TECHNEST</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">Home <i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content">
+                            <a href="index.html">Home 1</a>
+                            <a href="index2.html">Home 2</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Dashboard <i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content">
+                            <a href="user-dashboard.html">User Dashboard</a>
+                            <a href="admin-dashboard.html">Admin Dashboard</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn btn-outline" style="padding: 8px 16px;">Login</a></li>
+                    <li><a href="register.html" class="btn btn-primary" style="padding: 8px 16px; color: white;">Sign
+                            Up</a></li>
+                </ul>
+            </nav>
+            <div class="controls">
+                <button id="rtl-toggle" class="btn-icon-animate" title="RTL Toggle"><i class='bx bx-globe'></i></button>
+                <button id="theme-toggle" class="icon-btn"><i class='bx bx-moon'></i></button>
+                <div id="menu-toggle" class="menu-toggle"><i class='bx bx-menu'></i></div>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 0;">
+        <!-- SECTION 1: RATE_ALLOCATION (Hero) -->
+        <section class="tech-section relative overflow-hidden" style="padding: 100px 0; background: var(--bg-body);">
+            <div class="sb-wire-h" style="top: 50%; width: 100%; opacity: 0.1;"></div>
+            <div class="container relative z-10">
+                <div class="sb-panel max-w-2xl">
+                    <span class="text-xs text-secondary mb-2 block font-mono">[ PROTOCOL: RATE_ALLOCATION ]</span>
+                    <h1 class="text-5xl font-black text-white mb-6">SERVICE <span class="text-secondary">TIERS</span>
+                    </h1>
+                    <p class="text-lg text-gray-400">Scalable resource allocation for enterprise-grade operations. No
+                        hidden logic loops.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: TIER MATRIX -->
+        <section class="tech-section reveal-on-scroll">
+            <div class="container">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- MODULE 01: STARTER -->
+                    <div class="sb-panel flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-[0.6rem] font-mono text-gray-700 bg-black px-2 py-1">MODULE:
+                                LITE_NODE</span>
+                            <i class='bx bx-station text-primary text-xl'></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">STARTER</h3>
+                        <div class="text-4xl font-black text-primary mb-6">$49<span
+                                class="text-xs text-gray-600 font-mono">/MO</span></div>
+
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class='bx bx-check text-primary'></i> NETWORK_MONITORING_BASIC
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class='bx bx-check text-primary'></i> REMOTE_UPLINK (9-5)
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class='bx bx-check text-primary'></i> NEXT_DAY_INTERVENTION
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-gray-800 font-mono line-through">
+                                <i class='bx bx-x text-gray-800'></i> PHYSICAL_STATION_SUPPORT
+                            </li>
+                        </ul>
+
+                        <button
+                            class="sb-panel !p-3 bg-white/5 text-white font-bold border-gray-800 hover:border-primary transition-all">
+                            INITIALIZE_LITE
+                        </button>
+                    </div>
+
+                    <!-- MODULE 02: PROFESSIONAL (Pop) -->
+                    <div class="sb-panel flex flex-col border-primary border-2 shadow-[0_0_30px_rgba(0,255,0,0.1)]">
+                        <div
+                            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-black text-[0.6rem] font-bold px-4 py-1 rounded-full">
+                            POPULAR_CHOICE</div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-[0.6rem] font-mono text-primary bg-primary/10 px-2 py-1">MODULE:
+                                CORE_OPS</span>
+                            <i class='bx bx-brain text-primary text-xl'></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">PROFESSIONAL</h3>
+                        <div class="text-4xl font-black text-primary mb-6">$149<span
+                                class="text-xs text-gray-600 font-mono">/MO</span></div>
+
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-2 text-xs text-white font-mono">
+                                <i class='bx bx-check text-primary'></i> 24/7_GLOBAL_MONITORING
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-white font-mono">
+                                <i class='bx bx-check text-primary'></i> PRIORITY_RESCUE_REMOTE/PHYS
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-white font-mono">
+                                <i class='bx bx-check text-primary'></i> SECURITY_AUDIT_MONTHLY
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-white font-mono">
+                                <i class='bx bx-check text-primary'></i> 4HR_LATENCY_GUARANTEE
+                            </li>
+                        </ul>
+
+                        <button class="sb-panel !p-3 bg-primary text-black font-black border-none hover:opacity-90">
+                            DEPLOY_PROFESSIONAL
+                        </button>
+                    </div>
+
+                    <!-- MODULE 03: ENTERPRISE -->
+                    <div class="sb-panel flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-[0.6rem] font-mono text-gray-700 bg-black px-2 py-1">MODULE:
+                                ULTRA_DOMAIN</span>
+                            <i class='bx bx-shield-quarter text-accent text-xl'></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">ENTERPRISE</h3>
+                        <div class="text-4xl font-black text-accent mb-6">$399<span
+                                class="text-xs text-gray-600 font-mono">/MO</span></div>
+
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class='bx bx-check text-accent'></i> DEDICATED_ARCHITECT_NODE
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class='bx bx-check text-accent'></i> ADVANCED_THREAT_DEFENSE
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class='bx bx-check text-accent'></i> UNLIMITED_PACKET_SUPPORT
+                            </li>
+                            <li class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class='bx bx-check text-accent'></i> 1HR_LATENCY_PRIORITY
+                            </li>
+                        </ul>
+
+                        <button
+                            class="sb-panel !p-3 bg-white/5 text-white font-bold border-gray-800 hover:border-accent transition-all">
+                            CONTACT_OVERRIDE
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ONBOARDING LOGIC (Timeline) -->
+        <section class="tech-section reveal-on-scroll">
+            <div class="container">
+                <div class="section-title mb-16">
+                    <h2 class="text-white text-3xl font-bold">[ ONBOARDING_LOGIC ]</h2>
+                </div>
+                <div class="timeline-v2 max-w-3xl mx-auto">
+                    <div class="timeline-v2-item active">
+                        <h4 class="text-primary font-bold mb-2">STEP_01: DIAGNOSTIC</h4>
+                        <div class="sb-panel p-6">
+                            <p class="text-sm text-gray-500">Initial scan of existing infrastructure and gap analysis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-v2-item">
+                        <h4 class="text-secondary font-bold mb-2">STEP_02: INTEGRATION</h4>
+                        <div class="sb-panel p-6">
+                            <p class="text-sm text-gray-500">Secure bridging of local nodes to the TechNest unified
+                                core.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TECHNICAL QUERIES (FAQ V2) -->
+        <section class="tech-section reveal-on-scroll" style="background: var(--bg-card);">
+            <div class="container">
+                <div class="section-title mb-16">
+                    <h2 class="text-white text-3xl font-bold">[ TECHNICAL_QUERIES ]</h2>
+                    <p class="text-gray-400 mt-2">Explore the logic behind our tiers or initiation a direct diagnostic.
+                    </p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="faq-v2-item">
+                        <div class="faq-v2-header">
+                            [ Q: CAN_I_SCALE_UP_LATER? ]
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-v2-content">
+                            Yes, modular tiers can be upgraded instantly via your dashboard. Scaling takes less than
+                            300ms.
+                        </div>
+                    </div>
+                    <div class="faq-v2-item">
+                        <div class="faq-v2-header">
+                            [ Q: IS_THERE_A_SETUP_PROTOCOL_FEE? ]
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-v2-content">
+                            Standard integration is included in the monthly resource allocation. Large-scale enterprise
+                            migrations may require custom logic.
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <a href="contact.html"
+                        class="sb-panel inline-flex items-center gap-2 text-secondary border-secondary bg-transparent font-black px-12">
+                        OPEN_QUERY_TERMINAL <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>TechNest</h3>
+                    <p style="color: var(--text-muted);">Empowering businesses with top-tier IT support and
+                        infrastructure management. We provide reliable, secure, and scalable solutions for companies of
+                        all sizes.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="service-details.html">Help Desk</a></li>
+                        <li><a href="service-details.html">Cyber Security</a></li>
+                        <li><a href="service-details.html">Cloud Migration</a></li>
+                        <li><a href="service-details.html">Network Setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class='bx bx-map'></i> 123 Innovation Drive, Tech City, CA</li>
+                        <li><i class='bx bx-phone'></i> +1 (555) 123-4567</li>
+                        <li><i class='bx bx-envelope'></i> support@itsquad.com</li>
+                    </ul>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i
+                                class='bx bxl-facebook'></i></a>
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <a href="#" style="color: var(--primary); font-size: 1.5rem;"><i
+                                class='bx bxl-instagram'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 TechNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+</body>
+
+</html>

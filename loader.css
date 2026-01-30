@@ -1,0 +1,178 @@
+/* -------------------------------------------------------------------------- */
+/*                               Preloader                                    */
+/* -------------------------------------------------------------------------- */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-body);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+#preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wires */
+.wire {
+    position: absolute;
+    height: 4px;
+    background: var(--text-muted);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    box-shadow: 0 0 10px var(--primary);
+    transition: all 0.1s;
+    border-radius: 2px;
+}
+
+.wire.left {
+    left: 0;
+    animation: connectLeft 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: linear-gradient(90deg, transparent, var(--primary));
+}
+
+.wire.right {
+    right: 0;
+    animation: connectRight 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: linear-gradient(-90deg, transparent, var(--secondary));
+    box-shadow: 0 0 10px var(--secondary);
+}
+
+/* Spark/Shock */
+.spark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8),
+        0 0 40px 20px var(--primary),
+        0 0 60px 30px var(--secondary);
+    opacity: 0;
+    animation: shock 0.5s 1.4s ease-out forwards;
+    z-index: 2;
+}
+
+/* Loading Text */
+.loading-text {
+    margin-top: 2rem;
+    font-family: var(--font-main);
+    color: var(--primary);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    animation: blink 1s infinite alternate;
+    opacity: 0;
+    animation-delay: 1.5s;
+    animation-name: fadeInBlink;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+/* Animations */
+@keyframes connectLeft {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes connectRight {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes shock {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInBlink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Post-shock residue (optional, maybe a small glow remains) */
+.connection-point {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--primary);
+    opacity: 0;
+    animation: stabilize 0.5s 1.8s forwards;
+}
+
+@keyframes stabilize {
+    to {
+        opacity: 1;
+    }
+}
