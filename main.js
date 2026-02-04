@@ -162,22 +162,19 @@ if (menuBtn && navLinks) {
     });
 }
 
-// Dropdown Click Handler
 document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
     dropdownToggle.addEventListener('click', (e) => {
-        if (window.innerWidth > 900) { // Only for desktop
-            e.preventDefault();
-            const parent = dropdownToggle.parentElement;
+        e.preventDefault();
+        const parent = dropdownToggle.parentElement;
 
-            // Close other open dropdowns
-            document.querySelectorAll('.dropdown.open').forEach(openDropdown => {
-                if (openDropdown !== parent) {
-                    openDropdown.classList.remove('open');
-                }
-            });
+        // Close other open dropdowns
+        document.querySelectorAll('.dropdown.open').forEach(openDropdown => {
+            if (openDropdown !== parent) {
+                openDropdown.classList.remove('open');
+            }
+        });
 
-            parent.classList.toggle('open');
-        }
+        parent.classList.toggle('open');
     });
 });
 
@@ -254,7 +251,11 @@ if (contactForm) {
     });
 }
 // Dashboard Scroll & Highlight logic
+let isDashboardInitialized = false;
 function initDashboard() {
+    if (isDashboardInitialized) return;
+    isDashboardInitialized = true;
+
     const sidebarLinks = document.querySelectorAll('.sidebar li a[data-section]');
     const sections = document.querySelectorAll('.dashboard-section');
     const sectionTitle = document.getElementById('section-title');
@@ -273,8 +274,33 @@ function initDashboard() {
                         behavior: 'smooth'
                     });
                 }
+
+                // Close sidebar on mobile after clicking
+                if (window.innerWidth <= 1100) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const overlay = document.querySelector('.sidebar-overlay');
+                    if (sidebar) sidebar.classList.remove('active');
+                    if (overlay) overlay.classList.remove('active');
+                }
             });
         });
+
+        // Sidebar Mobile Toggle
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+
+        if (sidebarToggle && sidebar && overlay) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+
+            overlay.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        }
 
         // 2. Intersection Observer for Scroll Highlighting
         const options = {
@@ -341,5 +367,5 @@ function initDashboard() {
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', initDashboard);
 
-// Call it immediately as well in case script is deferred/async
-initDashboard();
+// Removed redundant initDashboard() call to prevent double event binding
+
