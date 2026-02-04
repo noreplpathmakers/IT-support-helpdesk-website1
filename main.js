@@ -68,9 +68,77 @@ function initPageLoad() {
     }
 }
 
+function injectBackgroundBlobs() {
+    const blobsContainer = document.createElement('div');
+    blobsContainer.className = 'bg-blobs';
+    blobsContainer.innerHTML = `
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    `;
+    document.body.appendChild(blobsContainer);
+}
+
+function highlightActiveNav() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Handle home page highlighting for index.html or root
+        if ((currentPath.includes('index.html') || currentPath === '/' || currentPath === '') && (href === 'index.html' || href === 'index2.html')) {
+            // For the home dropdown, we might want to highlight the parent if it's a dropdown
+            const parentDropdown = link.closest('.dropdown');
+            if (parentDropdown) {
+                parentDropdown.querySelector('a').classList.add('active');
+            } else {
+                link.classList.add('active');
+            }
+        } else if (href && href !== '#' && currentPath.includes(href)) {
+            link.classList.add('active');
+            const parentDropdown = link.closest('.dropdown');
+            if (parentDropdown) {
+                parentDropdown.querySelector('a').classList.add('active');
+            }
+        }
+    });
+}
+
+function initTechStackParticles() {
+    const techItems = document.querySelectorAll('.tech-item');
+
+    techItems.forEach(item => {
+        const particleField = item.querySelector('.particles-field');
+        if (!particleField) return;
+
+        // Create 30 particles per card
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+
+            // Random position and movement
+            const x = Math.random() * 100 - 50; // -50 to 50
+            const y = Math.random() * 100 - 50; // -50 to 50
+
+            particle.style.setProperty('--x', `${x}px`);
+            particle.style.setProperty('--y', `${y}px`);
+            particle.style.animation = `particleFloat ${1.5 + Math.random() * 2}s infinite`;
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+
+            particleField.appendChild(particle);
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initReveals();
     initPageLoad();
+    injectBackgroundBlobs();
+    highlightActiveNav();
+    initTechStackParticles();
 });
 
 // Header Scroll Effect

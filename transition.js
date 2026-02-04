@@ -5,7 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const ANIMATION_DURATION = 1000; // ms
 
     // Only run on main pages
-    const validPages = ['index.html', 'index2.html'];
+    const validPages = [
+        'index.html',
+        'index2.html',
+        'about.html',
+        'services.html',
+        'contact.html',
+        'login.html',
+        'signup.html',
+        'admin-dashboard.html',
+        'user-dashboard.html',
+        '404.html'
+    ];
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
     // Inject Overlay
