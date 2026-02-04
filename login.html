@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Nexus IT Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-page {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .login-brand {
+            background: var(--primary-gradient);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .login-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .login-page {
+                grid-template-columns: 1fr;
+            }
+
+            .login-brand {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Header: Switch Board Theme -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NEXUS SUPPORT</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="index.html">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1 (Classic)</a></li>
+                            <li><a href="index2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#">Dashboards <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Portal</a></li>
+                            <li><a href="admin-dashboard.html">Admin Panel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="controls">
+                    <button class="btn-icon" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button class="btn-icon" id="rtl-toggle" title="Toggle RTL"><i class="fas fa-globe"></i></button>
+                    <a href="signup.html" class="btn-secondary">Signup</a>
+                    <a href="login.html" class="btn-primary">Login</a>
+                    <div class="menu-btn" id="menu-btn">
+                        <div class="menu-btn__burger"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="login-page" style="padding-top: 80px;">
+        <!-- Left Side: Brand -->
+        <div class="login-brand" style="animation: slideInLeft 0.8s ease-out;">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">Welcome Back!</h1>
+            <p>Access your IT support dashboard and manage your tickets seamlessly.</p>
+            <img src="Assets/nexus_pricing.png" alt="Login"
+                style="width: 80%; margin-top: 50px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2)); animation: floating 4s ease-in-out infinite;">
+        </div>
+
+
+        <!-- Right Side: Form -->
+        <div class="login-form-container" style="animation: slideInUp 0.8s ease-out;">
+            <div class="card glass login-card">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div class="logo">NEXUS SUPPORT</div>
+                    <p style="color: var(--text-secondary); margin-top: 10px;">Sign in to continue</p>
+                </div>
+                <form id="login-form">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px;">Email Address</label>
+                        <input type="email" class="glow-input"
+                            style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--text-primary); transition: all 0.3s;"
+                            required>
+                    </div>
+                    <div style="margin-bottom: 30px; position: relative;">
+                        <label style="display: block; margin-bottom: 8px;">Password</label>
+                        <input type="password" id="password" class="glow-input"
+                            style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--text-primary); transition: all 0.3s;"
+                            required>
+                        <i class="fas fa-eye password-toggle" id="toggle-pwd"></i>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 15px;">Login
+                        Now</button>
+                    <div style="text-align: center;">
+                        <a href="#" style="font-size: 0.9rem; color: #6366f1; text-decoration: none;">Forgot
+                            Password?</a>
+                    </div>
+                </form>
+                <div
+                    style="margin-top: 30px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                    <p style="font-size: 0.9rem;">Don't have an account? <a href="signup.html"
+                            style="color: #6366f1; text-decoration: none;">Create One</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .glow-input:focus {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+            outline: none;
+        }
+    </style>
+
+
+    <div style="position: fixed; bottom: 20px; left: 20px;">
+        <button class="btn-icon" id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Password toggle logic
+        const togglePwd = document.getElementById('toggle-pwd');
+        const pwdInput = document.getElementById('password');
+        if (togglePwd && pwdInput) {
+            togglePwd.addEventListener('click', () => {
+                const type = pwdInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                pwdInput.setAttribute('type', type);
+                togglePwd.classList.toggle('fa-eye-slash');
+            });
+        }
+
+        // Mock login
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.location.href = 'user-dashboard.html';
+        });
+    </script>
+</body>
+
+</html>

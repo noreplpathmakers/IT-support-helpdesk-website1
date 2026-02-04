@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Nexus IT Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+    <!-- Header: Switch Board Theme -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NEXUS SUPPORT</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1 (Classic)</a></li>
+                            <li><a href="index2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#">Dashboards <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Portal</a></li>
+                            <li><a href="admin-dashboard.html">Admin Panel</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-only"><a href="login.html">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html">Signup</a></li>
+                </ul>
+                <div class="controls">
+                    <button class="btn-icon" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button class="btn-icon" id="rtl-toggle" title="Toggle RTL"><i class="fas fa-globe"></i></button>
+                    <a href="signup.html" class="btn-secondary desktop-only">Signup</a>
+                    <a href="login.html" class="btn-primary desktop-only">Login</a>
+                    <div class="menu-btn" id="menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero section-lg reveal">
+            <div class="container d-flex gap-40 align-center">
+                <div class="hero-content">
+                    <h1 class="mb-20">Get in <span style="color: var(--accent-orange);">Touch</span></h1>
+                    <p>We're here to help you solve your technical challenges.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="Assets/nexus_hero_v3.png" alt="Contact Hero" class="blend-mode-image"
+                        style="border-radius: 20px;">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-form-section section-md reveal">
+            <div class="container">
+                <div class="glass contact-card"
+                    style="max-width: 600px; margin: 0 auto; padding: 40px; position: relative; overflow: hidden;">
+                    <div class="bg-glow"
+                        style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, transparent 70%); animation: rotateGlow 15s linear infinite;">
+                    </div>
+                    <form id="contact-form" style="position: relative; z-index: 2;">
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                            <div class="focus-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                            <div class="focus-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="subject" placeholder=" " style="margin-bottom: 25px;">
+                            <label for="subject">Subject</label>
+                            <div class="focus-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <div class="focus-line"></div>
+                        </div>
+                        <button type="submit" class="btn-primary ripple-btn mt-20" style="width: 100%;">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Maps Section (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Find <span style="color: var(--accent-orange);">Us</span></h2>
+            </div>
+            <div class="glass" style="padding: 0; overflow: hidden; border-radius: 30px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0977545985894!2d-122.41941492347454!3d37.77492971170129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter%20HQ!5e0!3m2!1sen!2sus!4v1706000000000!5m2!1sen!2sus"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Office Locations (New) -->
+        <section class="offices section-md reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Global <span style="color: var(--accent-orange);">Offices</span></h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card glass">
+                        <h4>San Francisco HQ</h4>
+                        <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"
+                                style="color: var(--accent-orange);"></i> 123 Tech Boulevard, SF, CA 94102</p>
+                        <p><i class="fas fa-phone" style="color: var(--accent-orange);"></i> +1 (415) 555-0100</p>
+                        <p><i class="fas fa-envelope" style="color: var(--accent-orange);"></i> sf@nexussupport.com</p>
+                    </div>
+                    <div class="card glass">
+                        <h4>London Office</h4>
+                        <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"
+                                style="color: var(--accent-orange);"></i> 45 Fintech Street, London EC2A 4BX</p>
+                        <p><i class="fas fa-phone" style="color: var(--accent-orange);"></i> +44 20 7946 0958</p>
+                        <p><i class="fas fa-envelope" style="color: var(--accent-orange);"></i> london@nexussupport.com
+                        </p>
+                    </div>
+                    <div class="card glass">
+                        <h4>Singapore Hub</h4>
+                        <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"
+                                style="color: var(--accent-orange);"></i> 88 Marina Boulevard, Singapore 018956</p>
+                        <p><i class="fas fa-phone" style="color: var(--accent-orange);"></i> +65 6789 0123</p>
+                        <p><i class="fas fa-envelope" style="color: var(--accent-orange);"></i> sg@nexussupport.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Hours (New) -->
+        <section class="reveal" style="background: var(--panel-bg); padding: 80px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2>We're <span style="color: var(--accent-orange);">Always</span> Available</h2>
+                </div>
+                <div class="glass" style="max-width: 600px; margin: 0 auto; padding: 40px; text-align: center;">
+                    <i class="fas fa-clock"
+                        style="font-size: 3rem; color: var(--accent-orange); margin-bottom: 30px;"></i>
+                    <h3>24/7/365 Support</h3>
+                    <p style="margin-top: 20px; line-height: 1.8;">Our global team ensures round-the-clock coverage. No
+                        matter your timezone, we're here to help.</p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
+                        <div>
+                            <h4 style="color: var(--accent-orange);">Americas</h4>
+                            <p style="font-size: 0.9rem;">PST/EST</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-orange);">Europe</h4>
+                            <p style="font-size: 0.9rem;">GMT/CET</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-orange);">APAC</h4>
+                            <p style="font-size: 0.9rem;">SGT/JST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternative Contact Methods (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Connect <span style="color: var(--accent-orange);">With Us</span></h2>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card glass text-center">
+                    <i class="fas fa-comments"
+                        style="font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Live Chat</h4>
+                    <p>Instant support via our website chat</p>
+                </div>
+                <div class="card glass text-center">
+                    <i class="fab fa-slack"
+                        style="font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Slack Connect</h4>
+                    <p>Direct channel with your team</p>
+                </div>
+                <div class="card glass text-center">
+                    <i class="fas fa-headset"
+                        style="font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Phone Support</h4>
+                    <p>Speak with an expert now</p>
+                </div>
+                <div class="card glass text-center">
+                    <i class="fab fa-twitter"
+                        style="font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Social Media</h4>
+                    <p>Follow us @NexusSupport</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Response Promise (New) -->
+        <section class="container reveal" style="margin-bottom: 100px;">
+            <div class="glass"
+                style="background: var(--accent-orange); color: white; padding: 60px; text-align: center; border-radius: 30px;">
+                <h2 style="color: white;">Our Response Promise</h2>
+                <p
+                    style="margin-top: 30px; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    We guarantee a response within 15 minutes for critical issues. Your uptime is our priority.</p>
+                <a href="#contact-form" class="btn-primary"
+                    style="background: white; color: var(--accent-orange); margin-top: 30px; display: inline-block;">Get
+                    Immediate Help</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass footer-compact" style="background: var(--primary-color);">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div>
+                    <div class="logo" style="color: white; -webkit-text-fill-color: white; background: none;">
+                        NEXUS SUPPORT</div>
+                    <p style="margin-top: 30px; color: rgba(255,255,255,0.6);">Engineering reliability for a digital
+                        world since 2018.</p>
+                </div>
+                <div>
+                    <h4 style="color: white;">Services</h4>
+                    <ul style="list-style: none; margin-top: 30px; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Security Audit</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Cloud Management</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Disaster Recovery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white;">Company</h4>
+                    <ul style="list-style: none; margin-top: 30px; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="about.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Our Story</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Partners</a></li>
+                        <li style="margin-bottom: 12px;"><a href="contact.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white;">Newsletter</h4>
+                    <p style="margin-top: 30px; color: rgba(255,255,255,0.6);">Join our weekly IT digest.</p>
+                </div>
+            </div>
+            <hr style="margin: 60px 0; border: none; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: rgba(255,255,255,0.4);">
+                <p>&copy; 2026 Nexus Support. All rights reserved.</p>
+                <div style="display: flex; gap: 30px;">
+                    <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: inherit; text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: var(--text-secondary);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus~label,
+        .input-group input:not(:placeholder-shown)~label,
+        .input-group textarea:focus~label,
+        .input-group textarea:not(:placeholder-shown)~label {
+            top: -10px;
+            left: 10px;
+            font-size: 0.8rem;
+            background: var(--bg-color);
+            padding: 0 5px;
+            color: var(--primary-color);
+        }
+
+        .focus-line {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: all 0.4s ease;
+        }
+
+        .input-group input:focus~.focus-line,
+        .input-group textarea:focus~.focus-line {
+            width: 100%;
+            left: 0;
+        }
+
+        @keyframes rotateGlow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ripple-btn {
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+</body>
+
+</html>

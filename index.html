@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus IT Support | Premium Tech Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+    <!-- Header: Switch Board Theme -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NEXUS SUPPORT</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1 (Classic)</a></li>
+                            <li><a href="index2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#">Dashboards <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Portal</a></li>
+                            <li><a href="admin-dashboard.html">Admin Panel</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-only"><a href="login.html">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html">Signup</a></li>
+                </ul>
+                <div class="controls">
+                    <button class="btn-icon" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button class="btn-icon" id="rtl-toggle" title="Toggle RTL"><i class="fas fa-globe"></i></button>
+                    <a href="signup.html" class="btn-secondary desktop-only">Signup</a>
+                    <a href="login.html" class="btn-primary desktop-only">Login</a>
+                    <div class="menu-btn" id="menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero section-lg reveal">
+            <div class="container d-flex gap-40 align-center section-hero-standard">
+                <div class="hero-content">
+                    <span class="badge mb-20"
+                        style="background: var(--accent-orange); color: white; padding: 5px 15px; border-radius: 8px; font-weight: bold; display: inline-block; letter-spacing: 1px; animation: fadeIn 1s ease-out;">PREMIUM
+                        IT ARCHITECTURE</span>
+                    <h1 style="animation: slideInUp 1s ease-out;">Automating <span
+                            style="color: var(--accent-orange)">Reliability</span>
+                        <br>Beyond Expectations
+                    </h1>
+                    <p class="mb-30" style="line-height: 1.6; animation: fadeIn 1.2s ease-out;">Nexus Support isn't
+                        just a
+                        helpdesk; we are your strategic engineering partner. We specialize in 24/7 mission-critical
+                        support,
+                        fortified cybersecurity, and high-performance cloud ecosystems designed for the modern
+                        enterprise.
+                    </p>
+
+                    <div class="cta-group d-flex gap-20 mb-40" style="animation: fadeIn 1.4s ease-out;">
+                        <a href="#services" class="btn-primary"
+                            style="padding: 12px 30px; position: relative; overflow: hidden;">Explore Our Ecosystem</a>
+                        <a href="contact.html" class="btn-secondary" style="padding: 12px 30px;">Scale Your Business</a>
+                    </div>
+
+                    <div class="hero-pillars d-flex gap-30"
+                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; animation: fadeIn 1.6s ease-out;">
+                        <div class="pillar d-flex align-center gap-10"
+                            style="animation: floating 3s infinite ease-in-out;">
+                            <i class="fas fa-shield-alt" style="color: var(--accent-orange); font-size: 1.2rem;"></i>
+                            <div>
+                                <div style="font-weight: 700; color: inherit; font-size: 0.9rem;">Ironclad Security
+                                </div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Zero-trust protocols</div>
+                            </div>
+                        </div>
+                        <div class="pillar d-flex align-center gap-10"
+                            style="animation: floating 3.5s infinite ease-in-out;">
+                            <i class="fas fa-bolt" style="color: var(--accent-orange); font-size: 1.2rem;"></i>
+                            <div>
+                                <div style="font-weight: 700; color: inherit; font-size: 0.9rem;">99.9% Uptime</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Global redundancy</div>
+                            </div>
+                        </div>
+                        <div class="pillar d-flex align-center gap-10"
+                            style="animation: floating 4s infinite ease-in-out;">
+                            <i class="fas fa-headset" style="color: var(--accent-orange); font-size: 1.2rem;"></i>
+                            <div>
+                                <div style="font-weight: 700; color: inherit; font-size: 0.9rem;">Expert Desk</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">15min response time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image" style="position: relative;">
+                    <div class="glass"
+                        style="padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);">
+                        <img src="Assets/nexus_hero_v3.png" alt="IT Support"
+                            style="width: 100%; height: auto; border-radius: 8px;">
+                    </div>
+                    <!-- Dynamic Floating Stats Overlay -->
+                    <div class="stat-float"
+                        style="position: absolute; bottom: 60px; left: -20px; background: #2d2d2d; border: 2px solid #1a1a1a; padding: 15px 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <div style="color: var(--accent-orange); font-weight: 900; font-size: 1.5rem;">500+</div>
+                        <div style="color: white; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Enterprises Managed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Trust Section (Scrolling logos) -->
+            <section class="partners mb-120 reveal">
+                <div class="container text-center">
+                    <p class="mb-30" style="color: var(--text-secondary); letter-spacing: 2px; font-size: 0.8rem;">
+                        TRUSTED BY INDUSTRY LEADERS</p>
+                    <div class="partners-logos">
+                        <i class="fab fa-microsoft fa-3x"></i>
+                        <i class="fab fa-aws fa-3x"></i>
+                        <i class="fab fa-google fa-3x"></i>
+                        <i class="fab fa-apple fa-3x"></i>
+                        <i class="fab fa-cisco fa-3x"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Stats Section -->
+            <section class="stats mb-120 reveal" style="position: relative; z-index: 5; margin-top: -60px;">
+                <div class="container">
+
+                    <div class="stats-grid glass">
+                        <div class="stat-item reveal" data-delay="100">
+                            <h3 class="counter">99.9</h3>
+                            <p>Uptime %</p>
+                        </div>
+                        <div class="stat-item reveal" data-delay="200">
+                            <h3 class="counter">15</h3>
+                            <p>Min Response</p>
+                        </div>
+                        <div class="stat-item reveal" data-delay="300">
+                            <h3 class="counter">500</h3>
+                            <p>Global Clients</p>
+                        </div>
+                        <div class="stat-item reveal" data-delay="400">
+                            <h3 class="counter">24</h3>
+                            <p>Support Hours</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 3a. Awards Parallax Banner (New) -->
+            <section class="parallax-section" style="background-image: url('Assets/nexus_hero.png');">
+                <div class="parallax-overlay"></div>
+                <div class="container parallax-content">
+                    <i class="fas fa-trophy"
+                        style="font-size: 4rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h2 style=" margin-bottom: 10px;">Award Winning Support</h2>
+                    <p style="font-size: 1.5rem; opacity: 0.9;">Recognized by Gartner & Forrester as Top Tier MSP 2025
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-certificate" style=" color: var(--accent-orange);"></i>
+                            <p style="margin-top: 10px; font-weight: bold;">ISO 27001</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <i class="fas fa-certificate" style=" color: var(--accent-orange);"></i>
+                            <p style="margin-top: 10px; font-weight: bold;">SOC 2 Type II</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <i class="fas fa-certificate" style=" color: var(--accent-orange);"></i>
+                            <p style="margin-top: 10px; font-weight: bold;">GDPR Compliant</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Services Grid -->
+            <section id="services" class="container reveal" style="margin-top: 80px;">
+                <div style="text-align: center; margin-bottom: 60px;">
+
+                    <h2>Expert <span style="color: var(--accent-orange)">Services</span></h2>
+                    <p>Tailored solutions for your technical needs</p>
+                </div>
+                <div class="grid">
+                    <div class="card glass reveal" data-delay="100">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Solutions</h3>
+                        <p>Secure migration and management of your cloud infrastructure.</p>
+                    </div>
+                    <div class="card glass reveal" data-delay="200">
+                        <i class="fas fa-shield-halved"></i>
+                        <h3>Cybersecurity</h3>
+                        <p>Advanced threat protection and active system monitoring.</p>
+                    </div>
+                    <div class="card glass reveal" data-delay="300">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Managed IT</h3>
+                        <p>Total control and optimization of your office network.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4a. Technology Stack (New) -->
+            <div class="section-header">
+                <h2>Powered by <span style="color: var(--accent-orange)">Innovation</span></h2>
+                <p>We leverage the minimal-latency stacks for maximum performance</p>
+            </div>
+            <div class="tech-stack-grid">
+                <div class="tech-item">
+                    <i class="fab fa-react"></i>
+                    <span>React Native</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>SQL</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-linux"></i>
+                    <span>Linux</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-rust"></i>
+                    <span>Rust</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-microchip"></i>
+                    <span>IoT</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4b. Case Studies (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Success <span style="color: var(--accent-orange)">Stories</span></h2>
+                <p>Real results from real transformations</p>
+            </div>
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-study-bg" style="background-image: url('Assets/image16.jpg');"></div>
+                    <div class="case-study-content">
+                        <span class="stat-badge">FinTech</span>
+                        <h3>Global Banking Secure Migration</h3>
+                        <p>Migrated 50PB of sensitive financial data with zero downtime and 100% compliance rate.
+                        </p>
+                        <a href="#" style="color: var(--accent-orange); font-weight: bold; text-decoration: none;">Read
+                            Case Study &rarr;</a>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-bg" style="background-image: url('Assets/image17.jpg');"></div>
+                    <div class="case-study-content">
+                        <span class="stat-badge">Healthcare</span>
+                        <h3>AI Diagnostics Platform</h3>
+                        <p>Implemented edge-computing support for real-time patient monitoring systems.</p>
+                        <a href="#" style="color: var(--accent-orange); font-weight: bold; text-decoration: none;">Read
+                            Case Study &rarr;</a>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-bg" style="background-image: url('Assets/image18.jpg');"></div>
+                    <div class="case-study-content">
+                        <span class="stat-badge">Logistics</span>
+                        <h3>Supply Chain Automation</h3>
+                        <p>Reduced clear-to-build time by 40% using our custom IoT infrastructure.</p>
+                        <a href="#" style="color: var(--accent-orange); font-weight: bold; text-decoration: none;">Read
+                            Case Study &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Workflow Timeline -->
+        <section class="reveal" style="background: rgba(62, 39, 35, 0.02);">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+                    <h2>Our <span style="color: var(--accent-orange)">Process</span></h2>
+                    <p>Transparent steps to digital transformation</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item timeline-left reveal" data-delay="100">
+                        <div class="glass" style="padding: 30px;">
+                            <span style="font-size: 2rem; color: var(--accent-orange); font-weight: 800;">01</span>
+                            <h4 style="margin-top: 10px;">Discovery</h4>
+                            <p>Analyzing your current systems and identifying critical infrastructure gaps.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right reveal" data-delay="200">
+                        <div class="glass" style="padding: 30px;">
+                            <span style="font-size: 2rem; color: var(--accent-orange); font-weight: 800;">02</span>
+                            <h4 style="margin-top: 10px;">Strategy</h4>
+                            <p>Designing custom architecture and security protocols tailored for scale.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-left reveal" data-delay="300">
+                        <div class="glass" style="padding: 30px;">
+                            <span style="font-size: 2rem; color: var(--accent-orange); font-weight: 800;">03</span>
+                            <h4 style="margin-top: 10px;">Deployment</h4>
+                            <p>Rolling out engineered solutions with zero-downtime transition protocols.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        </section>
+
+        <!-- 5a. Global Network Map (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Global <span style="color: var(--accent-orange)">Presence</span></h2>
+                <p>Strategic edge nodes delivering sub-millisecond latency</p>
+            </div>
+            <div
+                style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1); max-width: 900px; margin: 0 auto;">
+                <img src="Assets/nexus_grid.png" alt="Global Network" class="ratio-12-5"
+                    style="width: 100%; display: block;">
+                <div
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0));">
+                </div>
+
+                <!-- Map Hotspots (Simulated) -->
+                <div style="position: absolute; top: 30%; left: 20%;" class="glow-effect">
+                    <i class="fas fa-circle" style="color: var(--accent-orange); font-size: 10px;"></i>
+                </div>
+                <div style="position: absolute; top: 40%; left: 45%;" class="glow-effect">
+                    <i class="fas fa-circle" style="color: var(--accent-orange); font-size: 10px;"></i>
+                </div>
+                <div style="position: absolute; top: 35%; left: 75%;" class="glow-effect">
+                    <i class="fas fa-circle" style="color: var(--accent-orange); font-size: 10px;"></i>
+                </div>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 40px; text-align: center;">
+                <div>
+                    <h3 style="color: var(--accent-orange);">North America</h3>
+                    <p>12 Data Centers</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-orange);">Europe</h3>
+                    <p>8 Data Centers</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-orange);">Asia Pacific</h3>
+                    <p>6 Data Centers</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-orange);">LatAm</h3>
+                    <p>4 Data Centers</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Feature Showcase (Large) -->
+        <section class="container reveal">
+            <div class="feature-showcase">
+                <img src="Assets/nexus_services.png" alt="Server Room" class="glass">
+                <div>
+                    <h2>Data Center <span style="color: var(--accent-orange)">Excellence</span></h2>
+                    <p>Our Tier 4 data centers ensure that your data is always accessible and completely secure. We use
+                        the latest in cooling technology and redundant power systems.</p>
+                    <ul style="list-style: none; margin-top: 30px;">
+                        <li style="margin-bottom: 20px; display: flex; align-items: start;"><i
+                                class="fas fa-check-circle"
+                                style="color: var(--accent-orange); margin-right: 15px; margin-top: 5px;"></i>
+                            <span><strong>Global Presence:</strong> Edge nodes in 50+ locations worldwide.</span>
+                        </li>
+                        <li style="margin-bottom: 20px; display: flex; align-items: start;"><i
+                                class="fas fa-check-circle"
+                                style="color: var(--accent-orange); margin-right: 15px; margin-top: 5px;"></i>
+                            <span><strong>Security First:</strong> Continuous AI-driven threat monitoring.</span>
+                        </li>
+                        <li style="margin-bottom: 20px; display: flex; align-items: start;"><i
+                                class="fas fa-check-circle"
+                                style="color: var(--accent-orange); margin-right: 15px; margin-top: 5px;"></i>
+                            <span><strong>Sustainable:</strong> 100% renewable energy powered facilities.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- 6a. Video Intro (New) -->
+        <section class="container reveal section-sm" style="text-align: center;">
+            <div
+                style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); max-width: 900px; margin: 0 auto;">
+                <img src="Assets/nexus_hero_v3.png" alt="Video Cover" class="ratio-12-5"
+                    style="width: 100%; display: block; filter: brightness(0.6);">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <button
+                        style="width: 80px; height: 80px; border-radius: 50%; background: var(--accent-orange); border: none; font-size: 2rem; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px var(--accent-orange);">
+                        <i class="fas fa-play" style="margin-left: 5px;"></i>
+                    </button>
+                    <p
+                        style="margin-top: 20px; color: white; font-weight: bold; font-size: 1.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                        See Nexus in Action</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6b. Industries We Serve (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Industries We <span style="color: var(--accent-orange)">Empower</span></h2>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="card glass text-center" style="text-align: center;">
+                    <i class="fas fa-landmark"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px;"></i>
+                    <h4 style="margin-bottom: 0;">Finance</h4>
+                </div>
+                <div class="card glass text-center" style="text-align: center;">
+                    <i class="fas fa-heartbeat"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px;"></i>
+                    <h4 style="margin-bottom: 0;">Healthcare</h4>
+                </div>
+                <div class="card glass text-center" style="text-align: center;">
+                    <i class="fas fa-shopping-cart"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px;"></i>
+                    <h4 style="margin-bottom: 0;">Retail</h4>
+                </div>
+                <div class="card glass text-center" style="text-align: center;">
+                    <i class="fas fa-university"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px;"></i>
+                    <h4 style="margin-bottom: 0;">Education</h4>
+                </div>
+                <div class="card glass text-center" style="text-align: center;">
+                    <i class="fas fa-industry"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px;"></i>
+                    <h4 style="margin-bottom: 0;">Manufacturing</h4>
+                </div>
+                <div class="card glass text-center" style="text-align: center;">
+                    <i class="fas fa-bolt"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px;"></i>
+                    <h4 style="margin-bottom: 0;">Energy</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Pricing Section -->
+        <section class="container reveal" id="pricing" style="margin-bottom: 150px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Premium <span style="color: var(--accent-orange)">Plans</span></h2>
+                <p>Scaling with your business growth</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card glass" style="padding: 40px;">
+                    <h4>Startup</h4>
+                    <div style=" font-weight: 800; margin: 25px 0;">$199<span style="font-size: 1rem;">/mo</span></div>
+                    <ul style="list-style: none; margin-bottom: 35px; text-align: left; padding: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> 10 User Licenses</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> 8/5 Helpdesk</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> Basic Security Bundle</li>
+                    </ul>
+                    <a href="#" class="btn-secondary" style="display: block;">Choose Plan</a>
+                </div>
+                <div class="pricing-card glass popular" style="padding: 40px; background: rgba(200, 155, 60, 0.05);">
+                    <div
+                        style="background: var(--accent-orange); color: white; position: absolute; top: 15px; right: -35px; transform: rotate(45deg); width: 140px; font-size: 0.7rem; font-weight: bold; padding: 5px 0;">
+                        MOST POPULAR</div>
+                    <h4>Enterprise</h4>
+                    <div style=" font-weight: 800; margin: 25px 0;">$499<span style="font-size: 1rem;">/mo</span></div>
+                    <ul style="list-style: none; margin-bottom: 35px; text-align: left; padding: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> Unlimited Users</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> 24/7 Priority Support</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> Advanced Threat Protection</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="display: block;">Go Unlimited</a>
+                </div>
+                <div class="pricing-card glass" style="padding: 40px;">
+                    <h4>Custom</h4>
+                    <div style=" font-weight: 800; margin: 25px 0;">Quote</div>
+                    <ul style="list-style: none; margin-bottom: 35px; text-align: left; padding: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> Tailored Architecture</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> Dedicated Engineer</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                style="color: var(--accent-orange);"></i> Hybrid Cloud Support</li>
+                    </ul>
+                    <a href="contact.html" class="btn-secondary" style="display: block;">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Interactive Feedback Section -->
+        <!-- 8. Interactive Feedback Section -->
+        <section class="reveal" style="background: var(--primary-color); padding: 100px 0; margin: 100px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2 style="color: var(--accent-orange); ">Voice of <span style="color: white">Clients</span></h2>
+                    <p style="color: rgba(255,255,255,0.7);">Trust built on engineered reliability and expert care</p>
+                </div>
+
+                <div class="feedback-cards">
+                    <!-- Feedback Card 1 -->
+                    <article class="fb-card fb-card--1">
+                        <div class="fb-card__info-hover">
+                            <i class="fas fa-quote-left" style="color: white; font-size: 1.5rem; opacity: 0.5;"></i>
+                        </div>
+                        <div class="fb-card__img"></div>
+                        <div class="fb-card__img--hover"></div>
+                        <div class="fb-card__info">
+                            <span class="fb-card__category">Cybersecurity</span>
+                            <h3 class="fb-card__title">"The security audit was exhaustive and game-changing for us."
+                            </h3>
+                            <span class="fb-card__by">By <a href="#" class="fb-card__author">James Wilson</a></span>
+                        </div>
+                    </article>
+
+                    <!-- Feedback Card 2 -->
+                    <article class="fb-card fb-card--2">
+                        <div class="fb-card__info-hover">
+                            <i class="fas fa-quote-left" style="color: white; font-size: 1.5rem; opacity: 0.5;"></i>
+                        </div>
+                        <div class="fb-card__img"></div>
+                        <div class="fb-card__img--hover"></div>
+                        <div class="fb-card__info">
+                            <span class="fb-card__category">Cloud Migration</span>
+                            <h3 class="fb-card__title">"Zero downtime during our massive data migration. Impressive."
+                            </h3>
+                            <span class="fb-card__by">By <a href="#" class="fb-card__author">Sarah Chen</a></span>
+                        </div>
+                    </article>
+
+                    <!-- Feedback Card 3 -->
+                    <article class="fb-card fb-card--3">
+                        <div class="fb-card__info-hover">
+                            <i class="fas fa-quote-left" style="color: white; font-size: 1.5rem; opacity: 0.5;"></i>
+                        </div>
+                        <div class="fb-card__img"></div>
+                        <div class="fb-card__img--hover"></div>
+                        <div class="fb-card__info">
+                            <span class="fb-card__category">Managed IT</span>
+                            <h3 class="fb-card__title">"Finally a partner that speaks tech and business equally well."
+                            </h3>
+                            <span class="fb-card__by">By <a href="#" class="fb-card__author">Michael Ross</a></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ Section -->
+        <section class="container reveal" style="margin-top: 180px; padding-top: 60px; margin-bottom: 150px;">
+            <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+                <h2>Common <span style="color: var(--accent-orange)">Queries</span></h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item glass reveal" data-delay="100">
+                    <div class="faq-question">
+                        What is included in the managed support?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our managed support includes 24/7 proactive monitoring, unlimited remote helpdesk, patch
+                            management, and quarterly strategic reviews.</p>
+                    </div>
+                </div>
+                <!-- etc -->
+            </div>
+        </section>
+
+        <!-- 10. Our Team -->
+        <section class="container reveal" style="margin-bottom: 120px;">
+            <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+                <h2>The <span style="color: var(--accent-orange)">Architects</span></h2>
+                <p>The minds behind the machines</p>
+            </div>
+            <div class="grid">
+                <div class="card glass reveal" data-delay="100" style="text-align: center;">
+                    <img src="Assets/profile3.jpg" alt="Team"
+                        style="width: 200px; height: 200px; border-radius: 8px; object-fit: cover; margin-bottom: 20px;">
+                    <h4>David Miller</h4>
+                    <p style="color: var(--accent-orange);">Head of Security</p>
+                </div>
+                <div class="card glass reveal" data-delay="200" style="text-align: center;">
+                    <img src="Assets/profile4.jpg" alt="Team"
+                        style="width: 200px; height: 200px; border-radius: 8px; object-fit: cover; margin-bottom: 20px;">
+                    <h4>Sera Lynn</h4>
+                    <p style="color: var(--accent-orange);">Cloud Operations</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 11. Recent News -->
+        <section class="container reveal" style="margin-bottom: 150px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Tech <span style="color: var(--accent-orange)">Pulse</span></h2>
+            </div>
+            <div class="grid">
+                <div class="card glass">
+                    <img src="Assets/image13.jpg" alt="Blog" class="ratio-12-5"
+                        style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                        <small style="color: var(--accent-orange);">CYBERSECURITY</small>
+                        <small>5 min read</small>
+                    </div>
+                    <h3>Protecting 5G Networks</h3>
+                    <p style="margin-bottom: 20px;">New protocols for the next generation of mobile connectivity.</p>
+                    <a href="#" style="color: var(--accent-orange); text-decoration: none; font-weight: bold;">Read
+                        More →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Newsletter -->
+        <section class="container reveal" style="margin-top: 100px;">
+            <div class="newsletter-box">
+                <h2>Join the <span style="color: var(--accent-orange)">Nexus</span></h2>
+                <p style="margin-bottom: 40px; color: rgba(255,255,255,0.8);">Get premium insights and system alerts
+                    directly to your inbox.</p>
+                <form onsubmit="event.preventDefault(); alert('Welcome to Nexus!')"
+                    style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <input type="email" placeholder="Email Address..." required style="min-width: 300px;">
+                    <button type="submit" class="btn-primary"
+                        style="background: #fff; color: var(--primary-color); border: none; padding: 12px 30px; font-weight: bold;">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="glass footer-compact" style="background: var(--primary-color);">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div>
+                    <div class="logo" style="color: white; -webkit-text-fill-color: white; background: none;">
+                        NEXUS SUPPORT</div>
+                    <p style="margin-top: 30px; color: rgba(255,255,255,0.6);">Engineering reliability for a digital
+                        world since 2018.</p>
+                </div>
+                <div>
+                    <h4 style="color: white;">Services</h4>
+                    <ul style="list-style: none; margin-top: 30px; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Security Audit</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Cloud Management</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Disaster Recovery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white;">Company</h4>
+                    <ul style="list-style: none; margin-top: 30px; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="about.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Our Story</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Partners</a></li>
+                        <li style="margin-bottom: 12px;"><a href="contact.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white;">Newsletter</h4>
+                    <p style="margin-top: 30px; color: rgba(255,255,255,0.6);">Join our weekly IT digest.</p>
+                </div>
+            </div>
+            <hr style="margin: 60px 0; border: none; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: rgba(255,255,255,0.4);">
+                <p>&copy; 2026 Nexus Support. All rights reserved.</p>
+                <div style="display: flex; gap: 30px;">
+                    <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: inherit; text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+    <script src="transition.js"></script>
+</body>
+
+</html>

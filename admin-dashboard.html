@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Nexus IT Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .chart-mock {
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .bar {
+            flex: 1;
+            background: var(--primary-gradient);
+            border-radius: 4px 4px 0 0;
+            transition: height 1s ease-out;
+            position: relative;
+        }
+
+        .bar:hover::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body data-theme="dark" class="dashboard-page">
+
+
+    <!-- Global Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NEXUS SUPPORT</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1 (Classic)</a></li>
+                            <li><a href="index2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active">Dashboards <i class="fas fa-chevron-down"
+                                style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Portal</a></li>
+                            <li><a href="admin-dashboard.html">Admin Panel</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-only"><a href="login.html">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html">Signup</a></li>
+                </ul>
+                <div class="controls">
+                    <button class="btn-icon" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button class="btn-icon" id="rtl-toggle" title="Toggle RTL"><i class="fas fa-globe"></i></button>
+                    <a href="signup.html" class="btn-secondary desktop-only">Signup</a>
+                    <a href="login.html" class="btn-primary desktop-only">Login</a>
+                    <div class="menu-btn" id="menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass">
+            <div class="logo">ADMIN PANEL</div>
+            <ul style="margin-top: 50px;">
+                <!-- Core -->
+                <li>
+                    <h4>Overview</h4>
+                </li>
+                <li><a href="#" class="active" data-section="analytics"><i class="fas fa-chart-line"></i> Analytics</a>
+                </li>
+                <!-- System -->
+                <li>
+                    <h4>System</h4>
+                </li>
+                <li><a href="#" data-section="server-health"><i class="fas fa-server"></i> Server Health</a></li>
+                <li><a href="login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Page Title Header -->
+            <div class="dashboard-page-header">
+                <button id="sidebar-toggle" class="btn-primary sidebar-toggle-btn"><i class="fas fa-bars"></i>
+                    Menu</button>
+                <div class="greeting-container">
+                    <h1 id="section-title">System Overview</h1>
+                    <p style="color: var(--text-secondary); margin-top: 5px;">Real-time performance metrics and system
+                        health.</p>
+                </div>
+            </div>
+
+            <section id="analytics" class="dashboard-section reveal">
+                <!-- Admin Stats -->
+                <div class="grid" style="grid-template-columns: repeat(4, 1fr); padding: 0; margin-bottom: 30px;">
+                    <div class="card glass reveal" data-delay="100">
+                        <h4 style="color: var(--text-secondary);">Total Users</h4>
+                        <p class="counter" style="font-size: 2rem; font-weight: 800; margin: 10px 0;">2543</p>
+                    </div>
+                    <div class="card glass reveal" data-delay="200">
+                        <h4 style="color: var(--text-secondary);">Open Tickets</h4>
+                        <p class="counter" style="font-size: 2rem; font-weight: 800; margin: 10px 0;">84</p>
+                    </div>
+                    <div class="card glass reveal" data-delay="300">
+                        <h4 style="color: var(--text-secondary);">Avg Response</h4>
+                        <p class="counter" style="font-size: 2rem; font-weight: 800; margin: 10px 0;">4</p>
+                    </div>
+                    <div class="card glass reveal" data-delay="400">
+                        <h4 style="color: var(--text-secondary);">Satisfaction</h4>
+                        <p class="counter" style="font-size: 2rem; font-weight: 800; margin: 10px 0;">98</p>
+                    </div>
+                </div>
+
+
+                <!-- Charts Grid -->
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                    <!-- 1. Traffic -->
+                    <div class="card glass">
+                        <h3>Network Traffic</h3>
+                        <canvas id="adminTrafficChart"></canvas>
+                    </div>
+                    <!-- 2. Volume -->
+                    <div class="card glass">
+                        <h3>Ticket Volume</h3>
+                        <canvas id="adminTicketVolume"></canvas>
+                    </div>
+                    <!-- 3. Satisfaction -->
+                    <div class="card glass">
+                        <h3>User Satisfaction</h3>
+                        <canvas id="adminSatisfaction"></canvas>
+                    </div>
+                    <!-- 4. Categories -->
+                    <div class="card glass">
+                        <h3>Issue Breakdown</h3>
+                        <canvas id="adminCategories"></canvas>
+                    </div>
+                    <!-- 5. CPU -->
+                    <div class="card glass">
+                        <h3>Server CPU Load</h3>
+                        <canvas id="adminCpuLoad"></canvas>
+                    </div>
+                    <!-- 6. Security -->
+                    <div class="card glass">
+                        <h3>Threat Detection</h3>
+                        <canvas id="adminSecurity"></canvas>
+                    </div>
+                    <!-- 7. Agent Performance -->
+                    <div class="card glass">
+                        <h3>Top Agents</h3>
+                        <canvas id="adminAgentPerf"></canvas>
+                    </div>
+                    <!-- 8. Revenue -->
+                    <div class="card glass">
+                        <h3>Revenue vs Cost</h3>
+                        <canvas id="adminRevenue"></canvas>
+                    </div>
+                    <!-- 9. Geo Load -->
+                    <div class="card glass">
+                        <h3>Global Load</h3>
+                        <canvas id="adminGeoLoad"></canvas>
+                    </div>
+                    <!-- 10. Uptime -->
+                    <div class="card glass">
+                        <h3>System Uptime</h3>
+                        <canvas id="adminUptime"></canvas>
+                    </div>
+                    <!-- 11. Storage Growth -->
+                    <div class="card glass">
+                        <h3>Storage Growth</h3>
+                        <canvas id="adminStorageGrowth"></canvas>
+                    </div>
+                    <!-- 12. Support Tickets Distribution -->
+                    <div class="card glass">
+                        <h3>Ticket Priority</h3>
+                        <canvas id="adminTicketPriority"></canvas>
+                    </div>
+                    <!-- 13. System Memory Usage -->
+                    <div class="card glass">
+                        <h3>Memory Usage</h3>
+                        <canvas id="adminMemoryUsage"></canvas>
+                    </div>
+                    <!-- 14. Network Latency -->
+                    <div class="card glass">
+                        <h3>Avg Latency (ms)</h3>
+                        <canvas id="adminLatency"></canvas>
+                    </div>
+                    <!-- 15. User Roles Breakdown -->
+                    <div class="card glass">
+                        <h3>User Roles</h3>
+                        <canvas id="adminUserRoles"></canvas>
+                    </div>
+                    <!-- 16. API Requests -->
+                    <div class="card glass">
+                        <h3>API Requests</h3>
+                        <canvas id="adminApiRequests"></canvas>
+                    </div>
+                    <!-- 17. Security Incidents -->
+                    <div class="card glass">
+                        <h3>Incident Severity</h3>
+                        <canvas id="adminIncidentSeverity"></canvas>
+                    </div>
+                    <!-- 18. Backup Success Rate -->
+                    <div class="card glass">
+                        <h3>Backup Success</h3>
+                        <canvas id="adminBackupSuccess"></canvas>
+                    </div>
+                    <!-- 19. Node Status -->
+                    <div class="card glass">
+                        <h3>Active Nodes</h3>
+                        <canvas id="adminNodeStatus"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Tickets Section -->
+            <section id="manage-tickets" class="dashboard-section">
+                <div class="card glass" style="padding: 0; overflow: hidden;">
+                    <div
+                        style="padding: 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                        <h3>Active Support Tickets</h3>
+                        <button class="btn-primary">Create New Ticket</button>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead style="background: var(--border-color);">
+                                <tr>
+                                    <th style="padding: 15px; text-align: left;">ID</th>
+                                    <th style="padding: 15px; text-align: left;">User</th>
+                                    <th style="padding: 15px; text-align: left;">Issue</th>
+                                    <th style="padding: 15px; text-align: left;">Priority</th>
+                                    <th style="padding: 15px; text-align: left;">Status</th>
+                                    <th style="padding: 15px; text-align: left;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 15px;">#TK-421</td>
+                                    <td style="padding: 15px;">John Doe</td>
+                                    <td style="padding: 15px;">Server unreachable in EU-West</td>
+                                    <td style="padding: 15px;"><span style="color: #ef4444;">High</span></td>
+                                    <td style="padding: 15px;"><span
+                                            style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem;">Open</span>
+                                    </td>
+                                    <td style="padding: 15px;"><button class="btn-secondary"
+                                            style="padding: 5px 10px;">Reply</button></td>
+                                </tr>
+                                <!-- More mock rows... -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Users Section -->
+            <section id="all-users" class="dashboard-section">
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); padding: 0;">
+                    <div class="card glass">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div
+                                style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-orange); display: flex; align-items: center; justify-content: center; color: white;">
+                                JD</div>
+                            <div>
+                                <h4 style="margin: 0;">John Doe</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Premium User</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px; font-size: 0.9rem;">
+                            <p><i class="fas fa-envelope" style="font-size: 0.8rem;"></i> john@example.com</p>
+                            <p><i class="fas fa-map-marker-alt" style="font-size: 0.8rem;"></i> London, UK</p>
+                        </div>
+                        <button class="btn-secondary" style="width: 100%; margin-top: 20px;">View Profile</button>
+                    </div>
+                    <!-- More mock users... -->
+                </div>
+            </section>
+
+            <!-- Finance Sections -->
+            <section id="invoices" class="dashboard-section">
+                <div class="card glass">
+                    <h3>Recent Invoices</h3>
+                    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+                        <div
+                            style="display: flex; justify-content: space-between; padding: 15px; background: var(--border-color); border-radius: 8px;">
+                            <span>INV-2026-001</span>
+                            <span>$1,200.00</span>
+                            <span style="color: #10b981;">Paid</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="billing" class="dashboard-section">
+                <div class="grid" style="grid-template-columns: 1fr 1fr; padding: 0;">
+                    <div class="card glass">
+                        <h3>Subscription Revenue</h3>
+                        <p style=" font-weight: 800; margin: 20px 0;">$45,230</p>
+                        <span style="color: #10b981;"><i class="fas fa-arrow-up"></i> 12% from last month</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Sections -->
+            <section id="audit-logs" class="dashboard-section">
+                <div class="card glass">
+                    <h3>System Audit Logs</h3>
+                    <div
+                        style="font-family: monospace; font-size: 0.85rem; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-top: 20px; height: 300px; overflow-y: auto;">
+                        <p style="color: #10b981;">[2026-02-04 06:15:32] Admin login successful from 192.168.1.1</p>
+                        <p style="color: #f59e0b;">[2026-02-04 06:10:12] Warning: Multiple failed login attempts for
+                            user 'sarah'</p>
+                        <p>[2026-02-04 06:05:00] Daily backup started...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="access-control" class="dashboard-section">
+                <div class="card glass">
+                    <h3>Access Control List (ACL)</h3>
+                    <p>Manage permissions and security groups.</p>
+                </div>
+            </section>
+
+            <!-- System Sections -->
+            <section id="server-health" class="dashboard-section">
+                <div class="grid" style="grid-template-columns: 1fr 1fr; padding: 0;">
+                    <div class="card glass">
+                        <h3>CPU Usage</h3>
+                        <div style="height: 10px; background: var(--border-color); border-radius: 5px; margin: 20px 0;">
+                            <div
+                                style="width: 45%; height: 100%; background: var(--primary-gradient); border-radius: 5px;">
+                            </div>
+                        </div>
+                        <span>45% across 16 cores</span>
+                    </div>
+                    <div class="card glass">
+                        <h3>Memory Usage</h3>
+                        <div style="height: 10px; background: var(--border-color); border-radius: 5px; margin: 20px 0;">
+                            <div style="width: 82%; height: 100%; background: #ef4444; border-radius: 5px;"></div>
+                        </div>
+                        <span>26.2GB / 32GB</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="backups" class="dashboard-section">
+                <div class="card glass">
+                    <h3>Backup Registry</h3>
+                    <p>Last automated backup: 2026-02-04 03:00 UTC</p>
+                    <button class="btn-primary" style="margin-top: 20px;">Run Full Backup Now</button>
+                </div>
+            </section>
+
+            <section id="integrations" class="dashboard-section">
+                <div class="grid" style="grid-template-columns: repeat(3, 1fr); padding: 0;">
+                    <div class="card glass" style="text-align: center;">
+                        <i class="fab fa-slack" style="font-size: 2rem;"></i>
+                        <h4>Slack</h4>
+                        <span style="color: #10b981;">Connected</span>
+                    </div>
+                    <div class="card glass" style="text-align: center;">
+                        <i class="fab fa-aws" style="font-size: 2rem;"></i>
+                        <h4>AWS Cloud</h4>
+                        <span style="color: #10b981;">Connected</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings" class="dashboard-section">
+                <div class="card glass">
+                    <h3>System Settings</h3>
+                    <form style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 5px;">System Name</label>
+                            <input type="text" value="Nexus IT Core"
+                                style="width: 100%; padding: 10px; background: var(--border-color); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 5px;">Maintenance Mode</label>
+                            <input type="checkbox"> Enable maintenance mode
+                        </div>
+                        <button class="btn-primary" style="width: fit-content;">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="charts.js"></script>
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+</body>
+
+</html>

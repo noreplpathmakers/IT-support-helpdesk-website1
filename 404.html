@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Nexus IT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .error-content {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .bouncing-icon {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            animation: floating 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+        }
+
+        .error-code {
+            font-size: 12rem;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            animation: fadeIn 1.5s ease-out, pulse-glow 2s infinite alternate;
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <div class="error-content container">
+        <div class="bouncing-icon">🛸</div>
+        <div class="error-code">404</div>
+        <h2 style="margin: 20px 0; animation: slideInUp 1s 0.2s both;">Lost in Cyberspace?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 40px; animation: slideInUp 1s 0.4s both;">The page you
+            are looking for has been moved or
+            technical support couldn't find it!</p>
+        <a href="index.html" class="btn-primary" style="animation: slideInUp 1s 0.6s both;">Back to Home</a>
+    </div>
+
+
+    <script>
+        // Use theme from localStorage if available
+        const theme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', theme);
+    </script>
+</body>
+
+</html>

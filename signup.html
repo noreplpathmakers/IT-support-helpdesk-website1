@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Nexus IT Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .signup-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top right, rgba(255, 123, 0, 0.05), transparent),
+                radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.05), transparent);
+            padding: 100px 20px 40px;
+        }
+
+        .signup-card {
+            width: 100%;
+            max-width: 500px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .glow-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-primary);
+            transition: all 0.3s;
+        }
+
+        .glow-input:focus {
+            border-color: var(--accent-orange) !important;
+            box-shadow: 0 0 15px rgba(255, 123, 0, 0.2);
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 42px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .signup-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Header: Switch Board Theme -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NEXUS SUPPORT</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="index.html">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1 (Classic)</a></li>
+                            <li><a href="index2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#">Dashboards <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Portal</a></li>
+                            <li><a href="admin-dashboard.html">Admin Panel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="controls">
+                    <button class="btn-icon" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button class="btn-icon" id="rtl-toggle" title="Toggle RTL"><i class="fas fa-globe"></i></button>
+                    <a href="signup.html" class="btn-secondary">Signup</a>
+                    <a href="login.html" class="btn-primary">Login</a>
+                    <div class="menu-btn" id="menu-btn">
+                        <div class="menu-btn__burger"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="signup-page">
+        <div class="card glass signup-card" style="animation: slideInUp 0.8s ease-out;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="Assets/nexus_origin.png" alt="Nexus Origin"
+                    style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 20px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
+                <div class="logo" style="font-size: 2rem;">NEXUS CORE</div>
+                <h2 style="margin-top: 15px;">Create Your Account</h2>
+                <p style="color: var(--text-secondary);">Join the future of enterprise IT support</p>
+            </div>
+
+            <form id="signup-form">
+                <div class="form-grid">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">First Name</label>
+                        <input type="text" class="glow-input" placeholder="John" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Last Name</label>
+                        <input type="text" class="glow-input" placeholder="Doe" required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Work Email</label>
+                    <input type="email" class="glow-input" placeholder="john@company.com" required>
+                </div>
+
+                <div class="password-container" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Password</label>
+                    <input type="password" id="password" class="glow-input" placeholder="••••••••" required>
+                    <i class="fas fa-eye password-toggle" id="toggle-pwd"></i>
+                </div>
+
+                <div style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 10px;">
+                    <input type="checkbox" id="terms" required style="margin-top: 4px;">
+                    <label for="terms" style="font-size: 0.85rem; color: var(--text-secondary);">
+                        I agree to the <a href="#" style="color: var(--accent-orange);">Terms of Service</a> and
+                        <a href="#" style="color: var(--accent-orange);">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 15px; font-size: 1rem;">
+                    Getting Started <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </button>
+            </form>
+
+            <div
+                style="margin-top: 30px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                <p style="font-size: 0.9rem;">Already have an account? <a href="login.html"
+                        style="color: var(--accent-orange); text-decoration: none; font-weight: bold;">Login Now</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        // Password toggle logic
+        const togglePwd = document.getElementById('toggle-pwd');
+        const pwdInput = document.getElementById('password');
+        if (togglePwd && pwdInput) {
+            togglePwd.addEventListener('click', () => {
+                const type = pwdInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                pwdInput.setAttribute('type', type);
+                togglePwd.classList.toggle('fa-eye-slash');
+            });
+        }
+
+        // Mock Signup
+        document.getElementById('signup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Account created! Welcome to Nexus.');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+
+</html>

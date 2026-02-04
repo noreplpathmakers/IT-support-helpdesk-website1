@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus IT Support | Modern Tech Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+    <!-- Header: Switch Board Theme -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NEXUS SUPPORT</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#" class="active">Home <i class="fas fa-chevron-down"
+                                style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1 (Classic)</a></li>
+                            <li><a href="index2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#">Dashboards <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Portal</a></li>
+                            <li><a href="admin-dashboard.html">Admin Panel</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-only"><a href="login.html">Login</a></li>
+                    <li class="mobile-only"><a href="signup.html">Signup</a></li>
+                </ul>
+                <div class="controls">
+                    <button class="btn-icon" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button class="btn-icon" id="rtl-toggle" title="Toggle RTL"><i class="fas fa-globe"></i></button>
+                    <a href="signup.html" class="btn-secondary desktop-only">Signup</a>
+                    <a href="login.html" class="btn-primary desktop-only">Login</a>
+                    <div class="menu-btn" id="menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Modern Hero Section -->
+        <!-- 1. Modern Hero Section -->
+        <section class="hero-modern reveal">
+            <div class="hero-bg-wrapper">
+                <img src="Assets/nexus_grid.png" alt="Future Tech Background" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 10;">
+                <div class="hero-content centered">
+                    <h1 class="mb-20">Modern <span style="color: var(--accent-orange);">Digital</span> Future</h1>
+                    <p class="mb-40">We don't just fix computers, we build the foundations of your business growth.</p>
+                    <div class="cta-group d-flex gap-20 justify-center">
+                        <a href="services.html" class="btn-primary" style="padding: 15px 35px;">Start Your Journey</a>
+                        <a href="about.html" class="btn-secondary"
+                            style="padding: 15px 35px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.2);">Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Feature Comparison Section -->
+        <section class="container reveal">
+            <div class="grid">
+                <div class="card glass">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Speed</h3>
+                    <p>Sub-15 minute response times, guaranteed.</p>
+                </div>
+                <div class="card glass">
+                    <i class="fas fa-lock"></i>
+                    <h3>Security</h3>
+                    <p>Military-grade encryption for all data streams.</p>
+                </div>
+                <div class="card glass">
+                    <i class="fas fa-sync"></i>
+                    <h3>Reliability</h3>
+                    <p>Distributed infrastructure for zero downtime.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Dynamic Stats -->
+        <section class="stats mb-80 reveal">
+            <div class="container">
+                <div class="stats-grid glass" style="background: var(--accent-orange); color: var(--primary-color);">
+                    <div class="stat-item">
+                        <h3 class="counter">1.2</h3>
+                        <p>Million Mbps</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter">98</h3>
+                        <p>% NPS Score</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3a. Technology Stack (New) -->
+        <section class="container reveal section-sm" style="text-align: center;">
+            <h2>Modern <span style="color: var(--accent-orange)">Stack</span></h2>
+            <div class="tech-stack-grid">
+                <div class="tech-item">
+                    <i class="fab fa-js"></i>
+                    <span>ES6+</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-node"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cubes"></i>
+                    <span>Microservices</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Services Showcase -->
+        <section class="container reveal">
+            <div class="feature-showcase" style="flex-direction: row-reverse;">
+                <img src="Assets/nexus_diagnostics.png" alt="Support Tech" class="glass">
+                <div>
+                    <h2>Proactive <span style="color: var(--accent-orange)">Monitoring</span></h2>
+                    <p>We detect issues before they affect your workflow. Our AI-driven systems monitor your network
+                        24/7/365.</p>
+                    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="glass" style="padding: 20px;">
+                            <i class="fas fa-terminal"></i>
+                            <p>Auto-Healing</p>
+                        </div>
+                        <div class="glass" style="padding: 20px;">
+                            <i class="fas fa-microchip"></i>
+                            <p>Remote Patching</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- 4a. Operational Methodology (New) -->
+        <section class="container reveal section-sm">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Our <span style="color: var(--accent-orange)">Methodology</span></h2>
+                <p>A systematic approach to digital perfection</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+                <div style="flex: 1;">
+                    <img src="Assets/nexus_methodology.png" alt="Methodology" class="glass glow-effect"
+                        style="width: 100%; border-radius: 8px;">
+                </div>
+                <div style="flex: 1;">
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 30px; display: flex; gap: 20px;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--accent-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">
+                                1</div>
+                            <div>
+                                <h4>Deep Dive Analysis</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">We map every node in your
+                                    network to identify latency and security gaps.</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 30px; display: flex; gap: 20px;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--accent-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">
+                                2</div>
+                            <div>
+                                <h4>Architecture Design</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Creating a custom blueprint
+                                    that aligns with your 5-year growth trajectory.</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 30px; display: flex; gap: 20px;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--accent-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">
+                                3</div>
+                            <div>
+                                <h4>Seamless Deployment</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Execution of the strategy
+                                    with parallel-running systems to ensure zero downtime.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4b. Project Gallery (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Featured <span style="color: var(--accent-orange)">Projects</span></h2>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="card glass text-center" style="padding: 10px; overflow: hidden;">
+                    <img src="Assets/nexus_architects.png"
+                        style="width: 100%; border-radius: 20px; transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <div style="padding: 20px;">
+                        <h4>FinTech Core</h4>
+                        <p style="font-size: 0.9rem;">Bank-grade infrastructure overhaul.</p>
+                    </div>
+                </div>
+                <div class="card glass text-center" style="padding: 10px; overflow: hidden;">
+                    <img src="Assets/nexus_unified.png"
+                        style="width: 100%; border-radius: 20px; transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <div style="padding: 20px;">
+                        <h4>Unified Cloud</h4>
+                        <p style="font-size: 0.9rem;">Multi-cloud dashboard integration.</p>
+                    </div>
+                </div>
+                <div class="card glass text-center" style="padding: 10px; overflow: hidden;">
+                    <img src="Assets/nexus_origin.png"
+                        style="width: 100%; border-radius: 20px; transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <div style="padding: 20px;">
+                        <h4>Origin AI</h4>
+                        <p style="font-size: 0.9rem;">AI-driven customer support center.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Timeline Journey -->
+        <section class="reveal" style="background: rgba(244, 162, 97, 0.05);">
+            <div class="container">
+                <div class="timeline">
+                    <div class="timeline-item timeline-left reveal">
+                        <div class="glass" style="padding: 30px;">
+                            <h4>Established</h4>
+                            <p>Founded with a vision for zero-friction IT.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right reveal">
+                        <div class="glass" style="padding: 30px;">
+                            <h4>Innovation</h4>
+                            <p>Launched our first AI support agent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Pricing Plans -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Growth <span style="color: var(--accent-orange)">Plans</span></h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card glass" style="padding: 40px;">
+                    <h4>Scale</h4>
+                    <div style="font-size: 3rem; font-weight: 800; margin: 25px 0;">$299<span
+                            style="font-size: 1rem;">/mo</span></div>
+                    <a href="#" class="btn-primary">Scale Up</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="container reveal">
+            <div class="faq-container">
+                <div class="faq-item glass">
+                    <div class="faq-question">
+                        Is on-site support available?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer on-site support packages for critical infrastructure and hardware maintenance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More sections to complete 12... -->
+        <!-- 7a. Core Values (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Our <span style="color: var(--accent-orange)">Ethos</span></h2>
+            </div>
+            <div class="grid">
+                <div class="card glass" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-hand-holding-heart"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Integrity</h4>
+                </div>
+                <div class="card glass" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-lightbulb"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Innovation</h4>
+                </div>
+                <div class="card glass" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-users"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Community</h4>
+                </div>
+                <div class="card glass" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-shield-alt"
+                        style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Security</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Feedback -->
+        <section class="container reveal">
+            <div class="card glass" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <i class="fas fa-star" style="color: var(--accent-orange);"></i>
+                <p>"The best investment we made this year."</p>
+            </div>
+        </section>
+
+        <!-- 9. Partner Logos -->
+        <section class="container reveal" style="opacity: 0.5;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <i class="fab fa-slack fa-3x"></i>
+                <i class="fab fa-trello fa-3x"></i>
+                <i class="fab fa-atlassian fa-3x"></i>
+            </div>
+        </section>
+
+        <!-- 11. Industry Solutions (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Industry <span style="color: var(--accent-orange)">Specialization</span></h2>
+                <p>Tailored IT ecosystems for every sector</p>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card glass text-center">
+                    <i class="fas fa-university"
+                        style="font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Banking & Finance</h4>
+                    <p>Securing billions in transactions with low-latency architecture.</p>
+                </div>
+                <div class="card glass text-center">
+                    <i class="fas fa-pills"
+                        style="font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>Healthcare Tech</h4>
+                    <p>HIPAA compliant data processing and telemedicine infrastructure.</p>
+                </div>
+                <div class="card glass text-center">
+                    <i class="fas fa-shopping-cart"
+                        style="font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 20px;"></i>
+                    <h4>E-Commerce Scale</h4>
+                    <p>Handling massive traffic spikes during seasonal global sales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Strategic Roadmap (New) -->
+        <section class="container reveal section-sm">
+            <div
+                style="background: var(--panel-bg); border-radius: 30px; padding: 60px; border: 1px solid var(--border-color);">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2>Your <span style="color: var(--accent-orange)">Strategic</span> Path</h2>
+                </div>
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
+                    <div style="text-align: center; max-width: 200px;">
+                        <h1 style="color: var(--accent-orange); margin-bottom: 10px;">Q1</h1>
+                        <h4>Audit</h4>
+                    </div>
+                    <div style="text-align: center; max-width: 200px;">
+                        <h1 style="color: var(--accent-orange); margin-bottom: 10px;">Q2</h1>
+                        <h4>Build</h4>
+                    </div>
+                    <div style="text-align: center; max-width: 200px;">
+                        <h1 style="color: var(--accent-orange); margin-bottom: 10px;">Q3</h1>
+                        <h4>Scalability</h4>
+                    </div>
+                    <div style="text-align: center; max-width: 200px;">
+                        <h1 style="color: var(--accent-orange); margin-bottom: 10px;">Q4</h1>
+                        <h4>Autonomy</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Client Voice: Testimonials (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>What <span style="color: var(--accent-orange)">Thinkers</span> Say</h2>
+            </div>
+            <div class="grid">
+                <div class="card glass">
+                    <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 20px;">"Nexus transformed
+                        our chaotic server room into a cloud powerhouse within weeks. Their uptime is legendary."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="Assets/profile1.jpg"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h5 style="margin: 0;">Mark Sterling</h5>
+                            <p style="font-size: 0.8rem; margin: 0; color: var(--accent-orange);">CTO, Global Logistics
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card glass">
+                    <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 20px;">"The zero-friction
+                        approach they talk about? It's real. I haven't seen a 'system down' error in over a year."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="Assets/profile2.jpg"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h5 style="margin: 0;">Sarah Jenkins</h5>
+                            <p style="font-size: 0.8rem; margin: 0; color: var(--accent-orange);">VP Engineering,
+                                FinBank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. Global Infrastructure (New) -->
+        <section class="reveal" style="padding: 100px 0; background: var(--primary-color); color: white;">
+            <div class="container" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 style="color: white; margin-bottom: 30px;">Global <span
+                            style="color: var(--accent-orange)">Edge</span> Network</h2>
+                    <p style="opacity: 0.8; line-height: 1.8;">Our points of presence span 14 countries, ensuring that
+                        your latency remains below 10ms regardless of where your users are located. We manage over 5,000
+                        nodes worldwide.</p>
+                </div>
+                <div style="flex: 1.5; min-width: 300px;">
+                    <imgsrc="Assets /nexus_liquid.png"
+                        style="width: 100%; border-radius: 30px; filter: grayscale(1) invert(1); opacity: 0.3;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. Detailed Plans comparison (New) -->
+        <section class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Comprehensive <span style="color: var(--accent-orange)">Services</span></h2>
+            </div>
+            <div class="glass" style="padding: 40px; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <th style="padding: 20px;">Feature</th>
+                        <th style="padding: 20px;">Basic</th>
+                        <th style="padding: 20px; color: var(--accent-orange);">Professional</th>
+                        <th style="padding: 20px;">Enterprise</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 20px;">24/7 Support</td>
+                        <td style="padding: 20px;"><i class="fas fa-check"></i></td>
+                        <td style="padding: 20px;"><i class="fas fa-check"></i></td>
+                        <td style="padding: 20px;"><i class="fas fa-check"></i></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 20px;">Response Time</td>
+                        <td style="padding: 20px;">4 Hours</td>
+                        <td style="padding: 20px; color: var(--accent-orange);">1 Hour</td>
+                        <td style="padding: 20px;">15 Mins</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 20px;">Cloud Integration</td>
+                        <td style="padding: 20px;"><i class="fas fa-times"></i></td>
+                        <td style="padding: 20px;"><i class="fas fa-check"></i></td>
+                        <td style="padding: 20px;"><i class="fas fa-check"></i></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- 16. Final CTA -->
+        <section class="container reveal" style="text-align: center; margin-bottom: 100px;">
+            <h2>Ready to <span style="color: var(--accent-orange);">Nexus</span>?</h2>
+            <p>Join the thousands of companies scaling with our infrastructure.</p>
+            <a href="contact.html" class="btn-primary"
+                style="padding: 20px 50px; font-size: 1.2rem; margin-top: 30px;">Contact Expert</a>
+        </section>
+
+    </main>
+
+    <footer class="glass footer-compact" style="background: var(--primary-color);">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div>
+                    <div class="logo" style="color: white; -webkit-text-fill-color: white; background: none;">
+                        NEXUS SUPPORT</div>
+                    <p style="margin-top: 30px; color: rgba(255,255,255,0.6);">Engineering reliability for a digital
+                        world since 2018.</p>
+                </div>
+                <div>
+                    <h4 style="color: white;">Services</h4>
+                    <ul style="list-style: none; margin-top: 30px; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Security Audit</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Cloud Management</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Disaster Recovery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white;">Company</h4>
+                    <ul style="list-style: none; margin-top: 30px; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="about.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Our Story</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Partners</a></li>
+                        <li style="margin-bottom: 12px;"><a href="contact.html"
+                                style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white;">Newsletter</h4>
+                    <p style="margin-top: 30px; color: rgba(255,255,255,0.6);">Join our weekly IT digest.</p>
+                </div>
+            </div>
+            <hr style="margin: 60px 0; border: none; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: rgba(255,255,255,0.4);">
+                <p>&copy; 2026 Nexus Support. All rights reserved.</p>
+                <div style="display: flex; gap: 30px;">
+                    <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: inherit; text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+    <script src="transition.js"></script>
+</body>
+
+</html>
