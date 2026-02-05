@@ -133,12 +133,293 @@ function initTechStackParticles() {
     });
 }
 
+function initPreloader() {
+    // Preloader is now hardcoded in HTML for immediate display
+    // We only need to handle the removal on load
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            // Ensure minimum display time of 1.5s (optional, can be reduced now)
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.remove();
+                }, 800);
+            }, 1000);
+        }
+    });
+}
+
+function initParallax() {
+    const parallaxBg = document.querySelector('.hero-parallax-bg');
+    if (!parallaxBg) return;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                // Move bg at 30% of scroll speed
+                parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
+
+function initLightning() {
+    const canvas = document.getElementById('lightning-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    function resize() {
+        const parent = canvas.parentElement;
+        width = canvas.width = parent.clientWidth || window.innerWidth;
+        height = canvas.height = parent.clientHeight || window.innerHeight;
+
+        // If height is still suspiciously zero, use window height
+        if (height < 10) height = canvas.height = window.innerHeight;
+
+        // Re-initialize any particles if they were forked with 0 height
+        if (typeof bolts !== 'undefined') {
+            bolts.forEach(b => { if (b.y === 0 && height > 0) b.reset(); });
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    // Re-check after a brief moment to catch late layout updates
+    setTimeout(resize, 500);
+    setTimeout(resize, 2000); // Second fallback for slow loaders
+
+    const mouse = { x: -1000, y: -1000 };
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+    canvas.addEventListener('mouseleave', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+    });
+
+    class Ring {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.radius = 0;
+            this.life = 0;
+            this.maxLife = 60;
+            this.alpha = 1;
+        }
+
+        update() {
+            this.life++;
+            this.radius += 4;
+            this.alpha = 1 - (this.life / this.maxLife);
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(249, 115, 22, ${this.alpha * 0.3})`;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+    }
+
+    class Snow {
+        constructor() {
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * -height;
+            this.vx = (Math.random() - 0.5) * 2;
+            this.vy = 1 + Math.random() * 3;
+            this.size = 1 + Math.random() * 4;
+            this.alpha = 0.4 + Math.random() * 0.6;
+            this.spin = Math.random() * Math.PI * 2;
+            this.spinSpeed = (Math.random() - 0.5) * 0.1;
+        }
+
+        update() {
+            // Wind effect based on time
+            const wind = Math.sin(Date.now() * 0.001) * 0.5;
+            this.vx += wind * 0.05;
+
+            // Mouse Interaction
+            const dx = this.x - mouse.x;
+            const dy = this.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 150) {
+                const force = (150 - dist) / 150;
+                this.vx += (dx / dist) * force * 2;
+                this.vy += (dy / dist) * force * 2;
+            }
+
+            this.x += this.vx;
+            this.y += this.vy;
+            this.vx *= 0.98; // Friction
+            this.vy *= 0.99;
+            if (this.vy < 1) this.vy = 1;
+
+            if (this.y > height || this.x < -50 || this.x > width + 50) {
+                this.reset();
+                this.y = -10;
+            }
+            this.spin += this.spinSpeed;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 160, 50, ${this.alpha})`; // Slightly warmer orange
+            ctx.shadowBlur = this.size * 2;
+            ctx.shadowColor = '#f97316';
+            ctx.fill();
+        }
+    }
+
+    class Lightning {
+        constructor(isBranch = false) {
+            this.isBranch = isBranch;
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = 0;
+            this.segments = [];
+            this.branches = [];
+            this.life = 0;
+            this.maxLife = 10 + Math.random() * 20;
+            this.alpha = 1;
+            this.createSegments(this.x, this.y, height / (this.isBranch ? 4 : 1), 12);
+
+            if (!this.isBranch) {
+                if (rings.length < 10) {
+                    const lastSeg = this.segments[this.segments.length - 1];
+                    rings.push(new Ring(lastSeg.x2, lastSeg.y2));
+                }
+            }
+        }
+
+        createSegments(startX, startY, totalHeight, count) {
+            let curX = startX;
+            let curY = startY;
+            const segStep = totalHeight / count;
+
+            for (let i = 0; i < count; i++) {
+                const nx = curX + (Math.random() * 100 - 50);
+                const ny = curY + segStep * (0.8 + Math.random() * 0.4);
+                this.segments.push({ x1: curX, y1: curY, x2: nx, y2: ny });
+
+                // Potential branching
+                if (!this.isBranch && Math.random() > 0.8 && i < count - 2) {
+                    const branch = new Lightning(true);
+                    branch.segments = [];
+                    branch.createSegments(nx, ny, totalHeight / 2, 5);
+                    this.branches.push(branch);
+                }
+
+                curX = nx;
+                curY = ny;
+            }
+        }
+
+        draw() {
+            if (this.life > this.maxLife) return;
+
+            // Intense orange glow
+            ctx.shadowBlur = this.isBranch ? 15 : 40;
+            ctx.shadowColor = '#f97316';
+            ctx.lineWidth = this.isBranch ? 2 : 5 + Math.random() * 3;
+            ctx.strokeStyle = `rgba(255, 140, 50, ${this.alpha * 1})`;
+
+            ctx.beginPath();
+            this.segments.forEach(seg => {
+                ctx.moveTo(seg.x1, seg.y1);
+                ctx.lineTo(seg.x2, seg.y2);
+            });
+            ctx.stroke();
+
+            // Super bright white core
+            if (!this.isBranch) {
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = `rgba(255, 255, 255, ${this.alpha * 1.8})`;
+                ctx.stroke();
+            }
+
+            this.branches.forEach(b => {
+                b.alpha = this.alpha;
+                b.draw();
+            });
+
+            // Flash effect (More visible)
+            if (this.life < 3 && !this.isBranch) { // Extended flash duration
+                ctx.fillStyle = `rgba(249, 115, 22, ${0.2 * Math.random()})`;
+                ctx.fillRect(0, 0, width, height);
+            }
+        }
+
+        update() {
+            this.life++;
+            this.alpha = 1 - (this.life / this.maxLife);
+            if (this.life > this.maxLife && Math.random() > 0.9) {
+                this.reset();
+            }
+        }
+    }
+
+    const bolts = Array.from({ length: 4 }, () => new Lightning());
+    const snowParticles = Array.from({ length: 500 }, () => new Snow());
+    let rings = [];
+
+    function animate() {
+        if (!ctx) return;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        // Use a very light darkening to allow the background to show through better
+        ctx.fillStyle = 'rgba(5, 8, 17, 0.15)';
+        ctx.fillRect(0, 0, width, height);
+
+        snowParticles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+
+        rings = rings.filter(ring => {
+            ring.update();
+            ring.draw();
+            return ring.life < ring.maxLife;
+        });
+
+        bolts.forEach(bolt => {
+            bolt.update();
+            bolt.draw();
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    console.log('Orange Thunder Initialized');
+    animate();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    initPreloader();
     initReveals();
     initPageLoad();
     injectBackgroundBlobs();
     highlightActiveNav();
     initTechStackParticles();
+    initParallax();
+    initLightning();
 });
 
 // Header Scroll Effect
@@ -227,10 +508,10 @@ if (statsGrid) {
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const item = question.parentElement;
-        item.classList.toggle('active');
+        item.classList.toggle('faq-open');
         const icon = question.querySelector('i');
         if (icon) {
-            icon.className = item.classList.contains('active') ? 'fas fa-minus' : 'fas fa-plus';
+            icon.className = item.classList.contains('faq-open') ? 'fas fa-minus' : 'fas fa-plus';
         }
     });
 });
@@ -256,87 +537,71 @@ function initDashboard() {
     if (isDashboardInitialized) return;
     isDashboardInitialized = true;
 
-    const sidebarLinks = document.querySelectorAll('.sidebar li a[data-section]');
+    // Use hash links now
+    const sidebarLinks = document.querySelectorAll('.sidebar li a[href^="#"]');
     const sections = document.querySelectorAll('.dashboard-section');
     const sectionTitle = document.getElementById('section-title');
 
-    if (sidebarLinks.length > 0) {
-        // 1. Smooth Scroll on Click
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('data-section');
-                const targetElement = document.getElementById(targetId);
+    // 1. Smooth Scroll on Click
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
 
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100, // Account for fixed header
-                        behavior: 'smooth'
-                    });
-                }
+            if (targetElement) {
+                // Calculate header offset
+                const headerOffset = 100;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                // Close sidebar on mobile after clicking
-                if (window.innerWidth <= 1100) {
-                    const sidebar = document.querySelector('.sidebar');
-                    const overlay = document.querySelector('.sidebar-overlay');
-                    if (sidebar) sidebar.classList.remove('active');
-                    if (overlay) overlay.classList.remove('active');
-                }
-            });
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Manually set active class immediately for responsiveness
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            }
         });
+    });
 
-        // Sidebar Mobile Toggle
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const sidebar = document.querySelector('.sidebar');
-        const overlay = document.querySelector('.sidebar-overlay');
+    // 2. Intersection Observer for Scroll Highlighting
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px', // Active when element is in the upper middle of screen
+        threshold: 0
+    };
 
-        if (sidebarToggle && sidebar && overlay) {
-            sidebarToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('active');
-            });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const visibleSectionId = entry.target.id;
 
-            overlay.addEventListener('click', () => {
-                sidebar.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-        }
+                // Update Active Link
+                sidebarLinks.forEach(link => {
+                    const linkTarget = link.getAttribute('href').substring(1);
+                    if (linkTarget === visibleSectionId) {
+                        // Remove active from all
+                        sidebarLinks.forEach(l => l.classList.remove('active'));
+                        // Add to current
+                        link.classList.add('active');
 
-        // 2. Intersection Observer for Scroll Highlighting
-        const options = {
-            root: null,
-            rootMargin: '-150px 0px -60% 0px', // Adjust trigger point
-            threshold: 0
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const targetSection = entry.target.id;
-
-                    // Update Active Link
-                    sidebarLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('data-section') === targetSection) {
-                            link.classList.add('active');
-
-                            // Update Title
-                            if (sectionTitle) {
-                                const linkText = link.innerText.trim();
-                                sectionTitle.innerText = (linkText === 'Dashboard' || linkText === 'Analytics')
-                                    ? (targetSection === 'analytics' ? 'System Overview' : 'Welcome, Sarah')
-                                    : linkText;
-                            }
+                        // Update Title safely
+                        if (sectionTitle) {
+                            // Map IDs to friendly titles if needed, or just use link text
+                            sectionTitle.innerText = link.innerText.trim();
                         }
-                    });
-                }
-            });
-        }, options);
+                    }
+                });
+            }
+        });
+    }, observerOptions);
 
-        sections.forEach(section => observer.observe(section));
-    }
+    sections.forEach(section => observer.observe(section));
 
-    // Dashboard Specific Toggles (rest unchanged)
+    // Dashboard Specific Toggles
     const dashThemeToggle = document.getElementById('dashboard-theme-toggle');
     const dashRtlToggle = document.getElementById('dashboard-rtl-toggle');
 

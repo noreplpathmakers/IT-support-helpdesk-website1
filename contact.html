@@ -10,6 +10,19 @@
 </head>
 
 <body data-theme="light">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="wire-container">
+            <div class="wire wire-left">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="wire wire-right">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="spark"></div>
+            <div class="preloader-text">Nexus Connecting</div>
+        </div>
+    </div>
     <!-- Header: Switch Board Theme -->
     <header>
         <div class="container">
@@ -50,11 +63,22 @@
     </header>
 
     <main>
-        <section class="hero section-lg reveal">
-            <div class="container d-flex gap-40 align-center">
+        <section class="hero section-lg reveal" style="position: relative; overflow: hidden; background: #050811;">
+            <canvas id="contact-nodes-canvas"></canvas>
+            <div class="hero-overlay-dark"
+                style="background: radial-gradient(circle at 50% 50%, rgba(5, 8, 17, 0.2) 0%, rgba(5, 8, 17, 0.8) 100%);">
+            </div>
+
+            <div class="container d-flex gap-40 align-center" style="position: relative; z-index: 2;">
                 <div class="hero-content">
-                    <h1 class="mb-20">Get in <span style="color: var(--accent-orange);">Touch</span></h1>
-                    <p>We're here to help you solve your technical challenges.</p>
+                    <span class="badge mb-20" style="background: var(--accent-orange); color: white;">DIRECT
+                        CHANNEL</span>
+                    <h1 class="mb-20" style="color: white; text-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                        Let's Engineer <br><span style="color: var(--accent-orange);">Your Future</span>
+                    </h1>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; max-width: 500px;">
+                        Connect with our elite engineering team to scale your reliability and security infrastructure.
+                    </p>
                 </div>
                 <div class="hero-image">
                     <img src="Assets/nexus_hero_v3.png" alt="Contact Hero" class="blend-mode-image"
@@ -77,9 +101,14 @@
                             <label for="name">Your Name</label>
                             <div class="focus-line"></div>
                         </div>
-                        <div class="input-group">
-                            <input type="email" id="email" required placeholder=" ">
-                            <label for="email">Your Email</label>
+                        <div class="input-group anim-border-trace">
+                            <input type="email" id="email" required placeholder=" " class="glass">
+                            <label for="email">Email Address</label>
+                            <div class="focus-line"></div>
+                        </div>
+                        <div class="input-group anim-border-trace">
+                            <input type="tel" id="phone" placeholder=" " class="glass">
+                            <label for="phone">Phone Number (Optional)</label>
                             <div class="focus-line"></div>
                         </div>
                         <div class="input-group">
@@ -119,14 +148,14 @@
                     <h2>Global <span style="color: var(--accent-orange);">Offices</span></h2>
                 </div>
                 <div class="grid-3">
-                    <div class="card glass">
+                    <div class="card glass anim-rotate-3d delay-100">
                         <h4>San Francisco HQ</h4>
                         <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"
                                 style="color: var(--accent-orange);"></i> 123 Tech Boulevard, SF, CA 94102</p>
                         <p><i class="fas fa-phone" style="color: var(--accent-orange);"></i> +1 (415) 555-0100</p>
                         <p><i class="fas fa-envelope" style="color: var(--accent-orange);"></i> sf@nexussupport.com</p>
                     </div>
-                    <div class="card glass">
+                    <div class="card glass anim-rotate-3d delay-200">
                         <h4>London Office</h4>
                         <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"
                                 style="color: var(--accent-orange);"></i> 45 Fintech Street, London EC2A 4BX</p>
@@ -134,7 +163,7 @@
                         <p><i class="fas fa-envelope" style="color: var(--accent-orange);"></i> london@nexussupport.com
                         </p>
                     </div>
-                    <div class="card glass">
+                    <div class="card glass anim-rotate-3d delay-300">
                         <h4>Singapore Hub</h4>
                         <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"
                                 style="color: var(--accent-orange);"></i> 88 Marina Boulevard, Singapore 018956</p>
@@ -217,7 +246,7 @@
                     style="margin-top: 30px; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                     We guarantee a response within 15 minutes for critical issues. Your uptime is our priority.</p>
                 <a href="#contact-form" class="btn-primary"
-                    style="background: white; color: var(--accent-orange); margin-top: 30px; display: inline-block;">Get
+                    style="background: white; color: var(--accent-orange) !important; margin-top: 30px; display: inline-block;">Get
                     Immediate Help</a>
             </div>
         </section>
@@ -344,7 +373,6 @@
     </style>
     <script src="main.js"></script>
     <script src="rtltoggle.js"></script>
-    <script src="transition.js"></script>
 </body>
 
 </html>

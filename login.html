@@ -60,6 +60,20 @@
 </head>
 
 <body data-theme="light">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="login-container anim-blur-reveal">
+            <div class="login-header">
+                <h2 class="anim-text-flow">Welcome Back</h2>
+                <p>Access your Nexus command center</p>
+            </div>
+            <div class="wire wire-right">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="spark"></div>
+            <div class="preloader-text">Nexus Connecting</div>
+        </div>
+    </div>
     <!-- Header: Switch Board Theme -->
     <header>
         <div class="container">
@@ -109,7 +123,7 @@
 
         <!-- Right Side: Form -->
         <div class="login-form-container" style="animation: slideInUp 0.8s ease-out;">
-            <div class="card glass login-card">
+            <div class="card glass login-card anim-blur-reveal">
                 <div style="text-align: center; margin-bottom: 30px;">
                     <div class="logo">NEXUS SUPPORT</div>
                     <p style="color: var(--text-secondary); margin-top: 10px;">Sign in to continue</p>
@@ -157,7 +171,6 @@
     </div>
 
     <script src="main.js"></script>
-    <script src="transition.js"></script>
     <script>
         // Password toggle logic
         const togglePwd = document.getElementById('toggle-pwd');

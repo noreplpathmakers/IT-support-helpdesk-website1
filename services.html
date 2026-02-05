@@ -10,6 +10,19 @@
 </head>
 
 <body data-theme="light">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="wire-container">
+            <div class="wire wire-left">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="wire wire-right">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="spark"></div>
+            <div class="preloader-text">Nexus Connecting</div>
+        </div>
+    </div>
     <!-- Header: Switch Board Theme -->
     <header>
         <div class="container">
@@ -66,7 +79,7 @@
             <div class="container">
                 <div class="grid-3">
                     <!-- Infrastructure -->
-                    <div class="card glass reveal" data-delay="100">
+                    <div class="card glass reveal anim-fade-up-stagger delay-100" data-delay="100">
                         <i class="fas fa-server" style="transition: transform 0.5s;"></i>
                         <h3>Infrastructure</h3>
                         <p>Design and deployment of scalable server environments.</p>
@@ -84,7 +97,7 @@
                     </div>
 
                     <!-- Cybersecurity -->
-                    <div class="card glass reveal" data-delay="200">
+                    <div class="card glass reveal anim-fade-up-stagger delay-200" data-delay="200">
                         <i class="fas fa-shield-alt" style="transition: transform 0.5s;"></i>
                         <h3>Cybersecurity</h3>
                         <p>Advanced threat protection and active system monitoring.</p>
@@ -104,7 +117,7 @@
                     </div>
 
                     <!-- Managed IT -->
-                    <div class="card glass reveal" data-delay="300">
+                    <div class="card glass reveal anim-fade-up-stagger delay-300" data-delay="300">
                         <i class="fas fa-headset" style="transition: transform 0.5s;"></i>
                         <h3>Managed IT</h3>
                         <p>24/7 technical oversight and pro-active maintenance.</p>
@@ -414,7 +427,6 @@
     </style>
     <script src="main.js"></script>
     <script src="rtltoggle.js"></script>
-    <script src="transition.js"></script>
 </body>
 
 </html>

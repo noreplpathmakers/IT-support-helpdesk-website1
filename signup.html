@@ -79,6 +79,25 @@
 </head>
 
 <body data-theme="light">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="signup-container anim-blur-reveal">
+            <div class="signup-header">
+                <h2 class="anim-text-flow">Join Nexus</h2>
+                <p>Start your digital transformation today</p>
+            </div>
+            <div class="wire-container">
+                <div class="wire wire-left">
+                    <div class="wire-tip"></div>
+                </div>
+                <div class="wire wire-right">
+                    <div class="wire-tip"></div>
+                </div>
+                <div class="spark"></div>
+                <div class="preloader-text">Nexus Connecting</div>
+            </div>
+        </div>
+    </div>
     <!-- Header: Switch Board Theme -->
     <header>
         <div class="container">
@@ -117,7 +136,7 @@
     </header>
 
     <main class="signup-page">
-        <div class="card glass signup-card" style="animation: slideInUp 0.8s ease-out;">
+        <div class="card glass signup-card anim-blur-reveal">
             <div style="text-align: center; margin-bottom: 30px;">
                 <img src="Assets/nexus_origin.png" alt="Nexus Origin"
                     style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 20px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
@@ -171,7 +190,7 @@
     </main>
 
     <script src="main.js"></script>
-    <script src="transition.js"></script>
+    <script src="rtltoggle.js"></script>
     <script>
         // Password toggle logic
         const togglePwd = document.getElementById('toggle-pwd');

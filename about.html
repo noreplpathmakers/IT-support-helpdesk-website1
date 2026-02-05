@@ -10,6 +10,19 @@
 </head>
 
 <body data-theme="light">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="wire-container">
+            <div class="wire wire-left">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="wire wire-right">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="spark"></div>
+            <div class="preloader-text">Nexus Connecting</div>
+        </div>
+    </div>
     <!-- Header: Switch Board Theme -->
     <header>
         <div class="container">
@@ -207,24 +220,27 @@
             </div>
             <div class="timeline" style="position: relative;">
                 <div class="timeline-item timeline-left reveal" data-delay="100">
-                    <div class="glass" style="padding: 20px;">
-                        <h4>2024 - Best Cloud Infrastructure</h4>
-                        <p>TechCrunch Disrupt Awards</p>
+                    <div class="timeline-item timeline-left reveal anim-slide-left-blur" data-delay="100">
+                        <div class="glass" style="padding: 20px;">
+                            <h4>2024 - Best Cloud Infrastructure</h4>
+                            <p>TechCrunch Disrupt Awards</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right reveal anim-slide-right-blur" data-delay="200">
+                        <div class="glass" style="padding: 30px;">
+                            <span style="font-size: 2rem; color: var(--accent-orange); font-weight: 800;">2021</span>
+                            <h4 style="margin-top: 10px;">Global Expansion</h4>
+                            <p>Opened data centers in Europe and Asia.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-left reveal anim-slide-left-blur" data-delay="300">
+                        <div class="glass" style="padding: 30px;">
+                            <span style="font-size: 2rem; color: var(--accent-orange); font-weight: 800;">2024</span>
+                            <h4 style="margin-top: 10px;">AI Integration</h4>
+                            <p>Launched AI-driven threat detection systems.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item timeline-right reveal" data-delay="200">
-                    <div class="glass" style="padding: 20px;">
-                        <h4>2023 - Top 10 IT Innovators</h4>
-                        <p>Forbes Technology Council</p>
-                    </div>
-                </div>
-                <div class="timeline-item timeline-left reveal" data-delay="300">
-                    <div class="glass" style="padding: 20px;">
-                        <h4>2022 - Sustainability Leader</h4>
-                        <p>Green Tech Alliance</p>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Team Section -->
@@ -303,7 +319,6 @@
 
         <script src="main.js"></script>
         <script src="rtltoggle.js"></script>
-        <script src="transition.js"></script>
 </body>
 
 </html>

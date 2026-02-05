@@ -10,6 +10,19 @@
 </head>
 
 <body data-theme="light">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="wire-container">
+            <div class="wire wire-left">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="wire wire-right">
+                <div class="wire-tip"></div>
+            </div>
+            <div class="spark"></div>
+            <div class="preloader-text">Nexus Connecting</div>
+        </div>
+    </div>
     <!-- Header: Switch Board Theme -->
     <header>
         <div class="container">
@@ -63,7 +76,8 @@
                     <h1 class="mb-20">Modern <span style="color: var(--accent-orange);">Digital</span> Future</h1>
                     <p class="mb-40">We don't just fix computers, we build the foundations of your business growth.</p>
                     <div class="cta-group d-flex gap-20 justify-center">
-                        <a href="services.html" class="btn-primary" style="padding: 15px 35px;">Start Your Journey</a>
+                        <a href="services.html" class="btn-primary anim-scale-center"
+                            style="padding: 15px 35px; animation-delay: 1.5s;">Start Your Journey</a>
                         <a href="about.html" class="btn-secondary"
                             style="padding: 15px 35px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.2);">Learn
                             More</a>
@@ -75,7 +89,7 @@
         <!-- 2. Feature Comparison Section -->
         <section class="container reveal section-md">
             <div class="grid">
-                <div class="card glass neon-card">
+                <div class="card glass neon-card anim-flip-y delay-100">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -84,7 +98,7 @@
                     <h3>Speed</h3>
                     <p>Sub-15 minute response times, guaranteed.</p>
                 </div>
-                <div class="card glass neon-card">
+                <div class="card glass neon-card anim-flip-y delay-200">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -93,7 +107,7 @@
                     <h3>Security</h3>
                     <p>Military-grade encryption for all data streams.</p>
                 </div>
-                <div class="card glass neon-card">
+                <div class="card glass neon-card anim-flip-y delay-300">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -163,7 +177,7 @@
 
         <!-- 4. Interactive Services Showcase -->
         <section class="container reveal section-lg">
-            <div class="feature-showcase" style="gap: 80px; align-items: center;">
+            <div class="feature-showcase" style="display: flex; gap: 80px; align-items: center; flex-wrap: wrap;">
                 <img src="Assets/nexus_diagnostics.png" alt="Support Tech" class="glass"
                     style="max-width: 350px; width: 100%;">
                 <div>
@@ -291,7 +305,7 @@
         <section class="reveal section-lg" style="background: rgba(244, 162, 97, 0.05);">
             <div class="container">
                 <div class="timeline">
-                    <div class="timeline-item timeline-left reveal">
+                    <div class="timeline-item timeline-left anim-slide-left-blur">
                         <div class="glass neon-card" style="padding: 30px;">
                             <span></span>
                             <span></span>
@@ -301,7 +315,7 @@
                             <p>Founded with a vision for zero-friction IT.</p>
                         </div>
                     </div>
-                    <div class="timeline-item timeline-right reveal">
+                    <div class="timeline-item timeline-right anim-slide-right-blur">
                         <div class="glass neon-card" style="padding: 30px;">
                             <span></span>
                             <span></span>
@@ -664,7 +678,6 @@
 
     <script src="main.js"></script>
     <script src="rtltoggle.js"></script>
-    <script src="transition.js"></script>
 </body>
 
 </html>
